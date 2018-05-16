@@ -1,0 +1,57 @@
+{
+  "name": "majifix-common",
+  "version": "0.1.0",
+  "description":"Common utilities for majifix",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test",
+    "integration": "grunt integration",
+    "dev": "BASE_PATH=./examples nodemon ./examples/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeTanzania/majifix-common.git"
+  },
+  "keywords": [
+    "open311",
+    "311",
+    "codetanzania",
+    "status",
+    "pipeline"
+  ],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    },
+    {
+      "name": "benMaruchu",
+      "email": "benmaruchu@gmail.com",
+      "url": "https://github.com/BenMaruchu"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeTanzania/majifix-common/issues",
+    "email": "lallyelias87@gmail.com"
+  },
+  "homepage": "https://github.com/CodeTanzania/majifix-common",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "faker": "git+https://github.com/Marak/faker.js.git",
+    "grunt": "^1.0.2",
+    "grunt-apidoc": "^0.11.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4",
+    "sinon": "^5.0.7",
+    "sinon-chai": "^3.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
