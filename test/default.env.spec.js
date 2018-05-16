@@ -22,6 +22,11 @@ describe('default', function () {
     it('should have default calling code', function () {
       expect(env.DEFAULT_CALLING_CODE).to.exist;
     });
+
+    it('should have locales', function () {
+      expect(env.LOCALES).to.exist;
+      expect(env.LOCALES).to.be.an('array');
+    });
   });
 });
 

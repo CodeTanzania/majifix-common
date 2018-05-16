@@ -7,6 +7,7 @@ const { expect } = require('chai');
 const API_VERSION = process.env.API_VERSION = '1.0.1';
 const DEFAULT_LOCALE = process.env.DEFAULT_LOCALE = 'sw';
 const DEFAULT_CALLING_CODE = process.env.DEFAULT_CALLING_CODE = '254';
+process.env.LOCALES = 'en,sw,fr';
 
 /* declarations */
 const env = require(path.join(__dirname, '..', 'lib', 'env'));
@@ -27,6 +28,14 @@ describe('parsed', function () {
     it('should use default calling code value set by user', function () {
       expect(env.DEFAULT_CALLING_CODE).to.exist;
       expect(env.DEFAULT_CALLING_CODE).to.be.equal(DEFAULT_CALLING_CODE);
+    });
+
+    it('should use locales set by a user', function () {
+      const locales = ['en', 'sw', 'fr'];
+      expect(env.LOCALES).to.exist;
+      expect(env.LOCALES).to.be.an('array');
+      expect(env.LOCALES).to.have.length(3);
+      expect(env.LOCALES).to.have.members(locales);
     });
   });
 
