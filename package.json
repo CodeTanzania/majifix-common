@@ -1,7 +1,7 @@
 {
   "name": "majifix-common",
   "version": "0.1.0",
-  "description":"Common utilities for majifix",
+  "description": "Common utilities for majifix",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
