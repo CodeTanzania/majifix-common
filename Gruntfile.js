@@ -6,20 +6,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-apidoc');
 
   grunt.initConfig({
-    apidoc: {
-      api: {
-        src: 'lib/',
-        dest: 'docs/',
-        options: {
-          debug: true,
-          includeFilters: ['.*\\.js$'],
-          excludeFilters: ['node_modules/']
-        }
-      }
-    },
     mochaTest: {
       unit: {
         options: {
@@ -83,6 +71,5 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['jshint', 'mochaTest']);
   grunt.registerTask('integration', ['jshint', 'mochaTest:integration']);
   grunt.registerTask('unit', ['jshint', 'mochaTest:unit']);
-  grunt.registerTask('doc', ['jshint', 'apidoc:api']);
 
 };

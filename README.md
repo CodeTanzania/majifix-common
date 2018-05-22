@@ -13,12 +13,12 @@ Common utilities for majifix
 
 ## Installation
 ```sh
-$ npm install --save majifix-common
+$ npm install --save @codetanzania/majifix-common
 ```
 
 ## Usage
 ```js
-const { env } = require('majifix-common');
+const { env } = require('@codetanzania/majifix-common');
 ```
 
 ## Test
