@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/majifix-common",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Common utilities for majifix",
   "main": "index.js",
   "scripts": {

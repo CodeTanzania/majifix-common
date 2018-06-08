@@ -1,3 +1,6 @@
+# v0.3.0 / 2018-06-08
+- Expose models name as constants
+
 # v0.1.0 / 2018-05-22
 
 * Common apidoc definitions

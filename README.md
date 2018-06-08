@@ -18,7 +18,7 @@ $ npm install --save @codetanzania/majifix-common
 
 ## Usage
 ```js
-const { env } = require('@codetanzania/majifix-common');
+const { env, models } = require('@codetanzania/majifix-common');
 ```
 
 ## Test
