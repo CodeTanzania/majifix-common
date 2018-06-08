@@ -3,6 +3,8 @@
 
 /* dependencies */
 const path = require('path');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 const { expect } = require('chai');
 
 
@@ -55,6 +57,23 @@ describe('default', function () {
       expect(common.models).to.exist;
       expect(common.models).to.be.eql(models);
     });
+
+    it('should get model', function () {
+      expect(models.getModel).to.exist;
+      expect(models.getModel).to.be.a('function');
+    });
+
+    it('should get model', function () {
+      const Any = models.getModel('Any');
+      expect(Any).to.be.undefined;
+    });
+
+    it('should get model', function () {
+      mongoose.model('Any', new Schema({ name: String }));
+      const Any = models.getModel('Any');
+      expect(Any).to.exist;
+    });
+
 
   });
 
