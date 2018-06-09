@@ -52,6 +52,18 @@ describe('default', function () {
         .to.be.equal('ServiceRequest');
     });
 
+    it('should expose account model name', function () {
+      expect(models.ACCOUNT_MODEL_NAME).to.exist;
+      expect(models.ACCOUNT_MODEL_NAME)
+        .to.be.equal('Account');
+    });
+
+    it('should expose content model name', function () {
+      expect(models.CONTENT_MODEL_NAME).to.exist;
+      expect(models.CONTENT_MODEL_NAME)
+        .to.be.equal('Content');
+    });
+
     it('should be exported', function () {
       expect(common).to.exist;
       expect(common.models).to.exist;

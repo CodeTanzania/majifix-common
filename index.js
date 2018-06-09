@@ -9,6 +9,7 @@ const path = require('path');
 const env = require(path.join(__dirname, 'lib', 'env'));
 const schema = require(path.join(__dirname, 'lib', 'schema'));
 const models = require(path.join(__dirname, 'lib', 'models'));
+const phone = require(path.join(__dirname, 'lib', 'phone'));
 
 
 Object.defineProperties(exports, {
@@ -25,6 +26,11 @@ Object.defineProperties(exports, {
   models: {
     get: function () {
       return models;
+    }
+  },
+  phone: {
+    get: function () {
+      return phone;
     }
   }
 });
