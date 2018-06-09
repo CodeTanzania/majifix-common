@@ -23,11 +23,23 @@ describe('default', function () {
       expect(env.DEFAULT_CALLING_CODE).to.exist;
     });
 
+    it('should expose default country code', function () {
+      expect(env.DEFAULT_COUNTRY_CODE).to.exist;
+    });
+
     it('should expose locales', function () {
       expect(env.LOCALES).to.exist;
       expect(env.LOCALES).to.be.an('array');
     });
+
+    it('should expose default content type', function () {
+      expect(env.DEFAULT_CONTENT_TYPE).to.exist;
+    });
+
+    it('should expose content types', function () {
+      expect(env.CONTENT_TYPES).to.exist;
+      expect(env.CONTENT_TYPES).to.be.an('array');
+    });
+
   });
 });
-
-
