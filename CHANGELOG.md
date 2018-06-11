@@ -1,3 +1,7 @@
+# v0.4.1 / 2018-06-12
+- Use latest mongoose version
+- Add `schema#unlocalize` to flat schema path value 
+
 # v0.4.0 / 2018-06-09
 - Expose account and content models name as constants
 - Parse allowed content types from `.env`
