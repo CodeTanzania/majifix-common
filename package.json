@@ -18,8 +18,7 @@
     "status",
     "pipeline"
   ],
-  "contributors": [
-    {
+  "contributors": [{
       "name": "lykmapipo",
       "email": "lallyelias87@gmail.com",
       "url": "https://github.com/lykmapipo"
@@ -52,5 +51,9 @@
     "async": "^2.6.1",
     "lodash": "^4.17.10",
     "phone": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=8.11.1",
+    "npm": ">=5.6.0"
   }
 }

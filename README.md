@@ -1,5 +1,4 @@
-majifix-common
-=====================
+# majifix-common
 
 [![Build module-starter](https://travis-ci.org/CodeTanzania/majifix-common.svg?branch=develop)](https://travis-ci.org/CodeTanzania/majifix-common)
 [![Dependencies module-starter](https://david-dm.org/CodeTanzania/majifix-common/module-starter.svg?style=flat-square)](https://david-dm.org/CodeTanzania/majifix-common)
@@ -7,38 +6,46 @@ majifix-common
 Common utilities for majifix
 
 ## Requirements
-- [NodeJS v9.9.0+](https://nodejs.org)
+
+- [NodeJS v8.11.1+](https://nodejs.org)
+- [Npm v5.6.0+](https://www.npmjs.com/)
 - [MongoDB v3.4.10+](https://www.mongodb.com/)
-- [Mongoose v5.0.14+](https://github.com/Automattic/mongoose)
+- [Mongoose v5.1.2+](https://github.com/Automattic/mongoose)
 
 ## Installation
+
 ```sh
-$ npm install --save @codetanzania/majifix-common
+npm install --save @codetanzania/majifix-common
 ```
 
 ## Usage
+
 ```js
 const { env, models } = require('@codetanzania/majifix-common');
 ```
 
 ## Test
-* Clone this repository
 
-* Install all dependencies
+- Clone this repository
+
+- Install all dependencies
+
 ```sh
-$ npm install
+npm install
 ```
 
-* Then run test
+- Then run test
+
 ```sh
-$ npm test
+npm test
 ```
 
 ## Contribute
+
 It will be nice, if you open an issue first so that we can know what is going on, then, fork this repo and push in your ideas. Do not forget to add a bit of test(s) of what value you adding.
 
-
 ## Licence
+
 The MIT License (MIT)
 
 Copyright (c) 2018 CodeTanzania & Contributors
