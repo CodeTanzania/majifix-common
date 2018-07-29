@@ -16,22 +16,52 @@ describe('default', function () {
 
   describe('models', function () {
 
+    it('should expose account model name', function () {
+      expect(models.ACCOUNT_MODEL_NAME).to.exist;
+      expect(models.ACCOUNT_MODEL_NAME)
+        .to.be.equal('Account');
+    });
+
+    it('should expose content model name', function () {
+      expect(models.CONTENT_MODEL_NAME).to.exist;
+      expect(models.CONTENT_MODEL_NAME)
+        .to.be.equal('Content');
+    });
+
     it('should expose jurisdiction model name', function () {
       expect(models.JURISDICTION_MODEL_NAME).to.exist;
       expect(models.JURISDICTION_MODEL_NAME)
         .to.be.equal('Jurisdiction');
     });
 
-    it('should expose status model name', function () {
-      expect(models.STATUS_MODEL_NAME).to.exist;
-      expect(models.STATUS_MODEL_NAME)
-        .to.be.equal('Status');
+    it('should expose party model name', function () {
+      expect(models.PARTY_MODEL_NAME).to.exist;
+      expect(models.PARTY_MODEL_NAME)
+        .to.be.equal('Party');
+    });
+
+    it('should expose permission model name', function () {
+      expect(models.PERMISSION_MODEL_NAME).to.exist;
+      expect(models.PERMISSION_MODEL_NAME)
+        .to.be.equal('Permission');
     });
 
     it('should expose priority model name', function () {
       expect(models.PRIORITY_MODEL_NAME).to.exist;
       expect(models.PRIORITY_MODEL_NAME)
         .to.be.equal('Priority');
+    });
+
+    it('should expose role model name', function () {
+      expect(models.ROLE_MODEL_NAME).to.exist;
+      expect(models.ROLE_MODEL_NAME)
+        .to.be.equal('Role');
+    });
+
+    it('should expose status model name', function () {
+      expect(models.STATUS_MODEL_NAME).to.exist;
+      expect(models.STATUS_MODEL_NAME)
+        .to.be.equal('Status');
     });
 
     it('should expose service group model name', function () {
@@ -50,18 +80,6 @@ describe('default', function () {
       expect(models.SERVICEREQUEST_MODEL_NAME).to.exist;
       expect(models.SERVICEREQUEST_MODEL_NAME)
         .to.be.equal('ServiceRequest');
-    });
-
-    it('should expose account model name', function () {
-      expect(models.ACCOUNT_MODEL_NAME).to.exist;
-      expect(models.ACCOUNT_MODEL_NAME)
-        .to.be.equal('Account');
-    });
-
-    it('should expose content model name', function () {
-      expect(models.CONTENT_MODEL_NAME).to.exist;
-      expect(models.CONTENT_MODEL_NAME)
-        .to.be.equal('Content');
     });
 
     it('should be exported', function () {

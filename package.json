@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/majifix-common",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Common utilities for majifix",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
     "status",
     "pipeline"
   ],
-  "contributors": [{
+  "contributors": [
+    {
       "name": "lykmapipo",
       "email": "lallyelias87@gmail.com",
       "url": "https://github.com/lykmapipo"
@@ -43,13 +44,13 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": "^5.1.7",
-    "sinon": "^6.0.1",
+    "mongoose": "^5.2.5",
+    "sinon": "^6.1.4",
     "sinon-chai": "^3.2.0"
   },
   "dependencies": {
     "async": "^2.6.1",
     "lodash": "^4.17.10",
-    "phone": "^2.0.0"
+    "phone": "^2.0.1"
   }
 }
