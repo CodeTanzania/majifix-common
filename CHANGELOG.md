@@ -1,3 +1,6 @@
+# v0.7.0 / 30-07-2018
+- Refactor `getArray` as utility helper to get array of unique values of specified environment variable
+
 # v0.4.1 / 2018-06-12
 - Use latest mongoose version
 - Add `schema#unlocalize` to flat schema path value 
