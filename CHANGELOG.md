@@ -1,3 +1,8 @@
+# 0.8.0 / 05-08-2018
+- Refactor env with shotcuts
+- Make env a functional factory
+- Add getString, getNumber, getArray, getStrings and getNumbers helpers
+
 # v0.7.0 / 30-07-2018
 - Refactor `getArray` as utility helper to get array of unique values of specified environment variable
 
