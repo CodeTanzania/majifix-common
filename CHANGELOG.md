@@ -1,3 +1,7 @@
+# 0.9.0 / 26-08-2018
+- Use @lyykmapipo/env as core env provider
+- Force latest dependencies
+
 # 0.8.0 / 05-08-2018
 - Refactor env with shotcuts
 - Make env a functional factory
