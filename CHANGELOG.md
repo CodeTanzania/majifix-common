@@ -1,3 +1,7 @@
+# 0.9.1 / 09-09-2018
+- force latest dependencies
+- run security audit fix
+
 # 0.9.0 / 26-08-2018
 - Use @lyykmapipo/env as core env provider
 - Force latest dependencies
