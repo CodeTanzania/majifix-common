@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/majifix-common",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "description": "Common utilities for majifix",
   "main": "index.js",
   "scripts": {
@@ -37,14 +37,14 @@
   },
   "homepage": "https://github.com/CodeTanzania/majifix-common",
   "devDependencies": {
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "grunt": "^1.0.3",
     "grunt-contrib-jshint": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": "^5.2.17",
+    "mongoose": "^5.3.0",
     "sinon": "^6.3.4",
     "sinon-chai": "^3.2.0"
   },
