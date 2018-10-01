@@ -16,6 +16,15 @@ describe('default', function () {
       expect(schema.POPULATION_MAX_DEPTH).to.be.equal(1);
     });
 
+    it('should expose schema options', function () {
+      expect(schema.SCHEMA_OPTIONS).to.exist;
+      expect(schema.SCHEMA_OPTIONS).to.be.an('object');
+      expect(schema.SCHEMA_OPTIONS).to.be.eql({
+        timestamps: true,
+        emitIndexErrors: true
+      });
+    });
+
     it('should expose sub doc schema options', function () {
       expect(schema.SUB_DOC_SCHEMA_OPTIONS).to.exist;
       expect(schema.SUB_DOC_SCHEMA_OPTIONS).to.be.an('object');
