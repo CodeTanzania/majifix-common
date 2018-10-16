@@ -1,3 +1,6 @@
+# 0.11.1 / 16-10-2018
+- Force latest dependencies
+
 # 0.9.1 / 09-09-2018
 - force latest dependencies
 - run security audit fix
