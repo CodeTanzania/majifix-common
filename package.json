@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/majifix-common",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Common utilities for majifix",
   "main": "index.js",
   "scripts": {
@@ -47,9 +47,9 @@
     "jshint-stylish": "^2.2.1",
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
-    "mongoose": "^5.3.1",
-    "phone": "^2.1.0",
-    "sinon": "^6.3.4",
+    "mongoose": "^5.3.4",
+    "phone": "^2.2.0",
+    "sinon": "^7.0.0",
     "sinon-chai": "^3.2.0"
   },
   "peerDependencies": {
@@ -58,7 +58,7 @@
     "lodash": "^4.17.11"
   },
   "dependencies": {
-    "phone": "^2.1.0"
+    "phone": "^2.2.0"
   },
   "engines": {
     "node": ">=8.11.1",
