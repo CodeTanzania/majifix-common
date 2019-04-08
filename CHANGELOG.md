@@ -1,3 +1,13 @@
+#### 0.12.0 (2019-04-08)
+
+##### Chores
+
+*  re-organize peer dependencies ([46683597](https://github.com/CodeTanzania/majifix-common/commit/46683597f6ce8d89b2832eebce2c98c2cf79c1e3))
+
+##### Refactors
+
+*  drop env to use @lykmapipo/env utilities ([c32336d2](https://github.com/CodeTanzania/majifix-common/commit/c32336d27aa0ea4e60812333e065fd2acc9b47cd))
+
 # 0.11.1 / 16-10-2018
 - Force latest dependencies
 
