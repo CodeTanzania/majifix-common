@@ -53,12 +53,13 @@
     "sinon-chai": "^3.3.0"
   },
   "peerDependencies": {
-    "@lykmapipo/env": "^0.7.2",
-    "async": "^2.6.2",
-    "lodash": "^4.17.11"
+    "mongoose": ">=5.4.23"
   },
   "dependencies": {
-    "phone": "^2.3.10"
+    "@lykmapipo/env": ">=0.7.2",
+    "async": ">=2.6.2",
+    "lodash": ">=4.17.11",
+    "phone": ">=2.3.10"
   },
   "engines": {
     "node": ">=8.11.1",
