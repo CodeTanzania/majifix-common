@@ -37,28 +37,28 @@
   },
   "homepage": "https://github.com/CodeTanzania/majifix-common",
   "devDependencies": {
-    "@lykmapipo/env": "^0.3.1",
-    "async": "^2.6.1",
+    "@lykmapipo/env": "^0.7.2",
+    "async": "^2.6.2",
     "chai": "^4.2.0",
-    "grunt": "^1.0.3",
-    "grunt-contrib-jshint": "^2.0.0",
+    "grunt": "^1.0.4",
+    "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "lodash": "^4.17.11",
-    "mocha": "^5.2.0",
-    "mongoose": "^5.3.4",
-    "phone": "^2.2.0",
-    "sinon": "^7.0.0",
-    "sinon-chai": "^3.2.0"
+    "mocha": "^6.1.1",
+    "mongoose": "^5.4.23",
+    "phone": "^2.3.10",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0"
   },
   "peerDependencies": {
-    "@lykmapipo/env": "^0.3.1",
-    "async": "^2.6.1",
+    "@lykmapipo/env": "^0.7.2",
+    "async": "^2.6.2",
     "lodash": "^4.17.11"
   },
   "dependencies": {
-    "phone": "^2.2.0"
+    "phone": "^2.3.10"
   },
   "engines": {
     "node": ">=8.11.1",
