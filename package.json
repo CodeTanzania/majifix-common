@@ -37,7 +37,6 @@
   },
   "homepage": "https://github.com/CodeTanzania/majifix-common",
   "devDependencies": {
-    "@lykmapipo/env": "^0.7.2",
     "async": "^2.6.2",
     "chai": "^4.2.0",
     "grunt": "^1.0.4",
