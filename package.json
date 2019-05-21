@@ -45,7 +45,6 @@
     "jshint-stylish": "^2.2.1",
     "mocha": "^6.1.4",
     "mongoose": "^5.4.23",
-    "phone": "^2.3.11",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0"
   },
@@ -56,7 +55,7 @@
     "@lykmapipo/env": ">=0.7.7",
     "async": ">=3.0.0",
     "lodash": ">=4.17.11",
-    "phone": ">=2.3.10"
+    "phone": ">=2.3.11"
   },
   "engines": {
     "node": ">=8.11.1",
