@@ -1,5 +1,15 @@
 #### 0.12.3 (2019-05-21)
 
+##### Chores
+
+- **deps:** fix duplicates ([44d38ac6](https://github.com/CodeTanzania/majifix-common/commit/44d38ac60e99fab2c84be58e11039569b36fa901))
+
+##### Documentation Changes
+
+- **changelog:** generate latest release notes ([21616504](https://github.com/CodeTanzania/majifix-common/commit/21616504eb69ee98ca0ccbcdfc70de4ffb74c74c))
+
+#### 0.12.3 (2019-05-21)
+
 #### 0.12.2 (2019-05-21)
 
 #### 0.12.1 (2019-04-15)
