@@ -1,3 +1,13 @@
+#### 0.13.0 (2019-07-27)
+
+##### Chores
+
+- **deps:** force latest version & audit fix ([b0667fa1](https://github.com/CodeTanzania/majifix-common/commit/b0667fa1770898dd4c01c77ae53dd185d2300d82))
+
+##### Documentation Changes
+
+- **changelog:** generate latest release notes ([a0667745](https://github.com/CodeTanzania/majifix-common/commit/a0667745bb504acf06c7d72ff624f1278b19a03b))
+
 #### 0.12.4 (2019-05-21)
 
 #### 0.12.3 (2019-05-21)
