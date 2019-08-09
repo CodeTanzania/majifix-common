@@ -1,27 +1,15 @@
-'use strict';
-
-/* dependencies */
-const path = require('path');
-
-/* declarations */
-const schema = require(path.join(__dirname, 'lib', 'schema'));
-const models = require(path.join(__dirname, 'lib', 'models'));
-const phone = require(path.join(__dirname, 'lib', 'phone'));
+import schema from './schema';
+import models from './models';
 
 Object.defineProperties(exports, {
   schema: {
-    get: function() {
+    get() {
       return schema;
     },
   },
   models: {
-    get: function() {
+    get() {
       return models;
-    },
-  },
-  phone: {
-    get: function() {
-      return phone;
     },
   },
 });

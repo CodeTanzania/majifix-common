@@ -1,5 +1,3 @@
-'use strict';
-
 /*
  * ------------------------------------------------
  *  Headers
@@ -13,7 +11,6 @@
  * @apiHeader {String} [Accept-Encoding='gzip, deflate'] Accepted encoding type
  */
 
-
 /**
  * @apiDefine RequestHeadersExample
  * @apiHeaderExample {json} Header-Example:
@@ -23,7 +20,6 @@
  *     "Accept-Encoding": "gzip, deflate"
  *   }
  */
-
 
 /*
  * ----------------------------------------------------
@@ -36,7 +32,6 @@
  * @apiError  JWTExpired  Authorization token has expired
  */
 
-
 /**
  * @apiDefine JWTErrorExample
  * @apiErrorExample  {json}   Error-Response:
@@ -48,12 +43,10 @@
  *    }
  */
 
-
 /**
  * @apiDefine AuthorizationHeaderError
  * @apiError  AuthorizationHeaderRequired  Authorization header is required
  */
-
 
 /**
  * @apiDefine AuthorizationHeaderErrorExample

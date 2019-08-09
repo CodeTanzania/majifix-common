@@ -1,16 +1,8 @@
-'use strict';
-
-/* dependencies */
-const path = require('path');
-const { expect } = require('chai');
-
-/* declaration */
-const schema = require(path.join(__dirname, '..', 'lib', 'schema'));
+import { expect } from 'chai';
+import schema from '../src/schema';
 
 describe('default', () => {
-
   describe('schema', () => {
-
     it('should expose max auto populate depth', () => {
       expect(schema.POPULATION_MAX_DEPTH).to.exist;
       expect(schema.POPULATION_MAX_DEPTH).to.be.equal(1);
@@ -21,7 +13,7 @@ describe('default', () => {
       expect(schema.SCHEMA_OPTIONS).to.be.an('object');
       expect(schema.SCHEMA_OPTIONS).to.be.eql({
         timestamps: true,
-        emitIndexErrors: true
+        emitIndexErrors: true,
       });
     });
 
@@ -32,7 +24,7 @@ describe('default', () => {
         _id: false,
         id: false,
         timestamps: false,
-        emitIndexErrors: true
+        emitIndexErrors: true,
       });
     });
 
@@ -49,7 +41,5 @@ describe('default', () => {
       expect(unlocalized).to.have.property('greeting');
       expect(unlocalized).to.have.property('greeting_sw');
     });
-
   });
-
 });
