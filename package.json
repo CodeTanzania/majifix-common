@@ -94,7 +94,7 @@
   "dependencies": {
     "@lykmapipo/common": ">=0.25.1",
     "@lykmapipo/env": ">=0.12.1",
-    "@lykmapipo/mongoose-common": ">=0.25.9",
+    "@lykmapipo/mongoose-common": ">=0.25.10",
     "async": ">=3.1.0",
     "lodash": ">=4.17.15",
     "phone": ">=2.3.18"
