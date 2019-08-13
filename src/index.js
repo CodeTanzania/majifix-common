@@ -42,7 +42,12 @@ export const COLLECTION_NAME_SERVICETYPE = toCollectionName(
   MODEL_NAME_SERVICETYPE
 );
 
+/* population options */
+export const POPULATION_MAX_DEPTH = 1;
+
 /* pedefines namespaces */
+
+// TODO use models name
 export const PREDEFINE_NAMESPACE_PRIORITY = 'Priority';
 export const PREDEFINE_NAMESPACE_STATUS = 'Status';
 export const PREDEFINE_NAMESPACE_SERVICEGROUP = 'ServiceGroup';
@@ -51,8 +56,10 @@ export const PREDEFINE_NAMESPACE_SERVICE = 'Service';
 export const PREDEFINE_NAMESPACE_BLOCKREASON = 'BlockReason';
 
 /* pedefines buckets */
+
+// TODO use collections name
 export const PREDEFINE_BUCKET_PRIORITY = 'priorities';
-export const PREDEFINE_BUCKET_STATUS = 'statuses';
+export const PREDEFINE_BUCKET_STATUS = 'status';
 export const PREDEFINE_BUCKET_SERVICEGROUP = 'servicegroups';
 export const PREDEFINE_BUCKET_SERVICETYPE = 'servicetypes';
 export const PREDEFINE_BUCKET_SERVICE = 'services';
