@@ -1,18 +1,24 @@
 {
   "name": "@codetanzania/majifix-common",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Common utilities for majifix",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "scripts": {
-    "test": "grunt test",
-    "integration": "grunt integration",
-    "commit": "git-cz",
-    "commit:all": "git add -A && git-cz",
-    "changelog": "changelog"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/CodeTanzania/majifix-common.git"
+    "clean": "rimraf lib dist es umd logs",
+    "prebuild": "npm test && npm run clean",
+    "build": "rollup -c",
+    "lint": "eslint --fix --ext .js src/ test/ rollup.config.js",
+    "pretest": "npm run lint",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --exit --require @babel/register test/**/*.spec.js",
+    "test:unit": "npm run pretest && NODE_ENV=test mocha --require @babel/register test/unit/**/*.spec.js",
+    "test:integration": "npm run pretest && NODE_ENV=test mocha --require @babel/register test/integration/**/*.spec.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "docs": "doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md",
+    "cmt": "git add -A && git-cz",
+    "changelog": "changelog",
+    "chore:deps": "ncu -u && npm install --save",
+    "lint:config": "eslint --print-config rollup.config.js"
   },
   "keywords": [
     "open311",
@@ -21,6 +27,15 @@
     "status",
     "pipeline"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeTanzania/majifix-common.git"
+  },
+  "author": {
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  },
   "contributors": [
     {
       "name": "lykmapipo",
@@ -40,35 +55,53 @@
   },
   "homepage": "https://github.com/CodeTanzania/majifix-common",
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@commitlint/travis-cli": "^8.1.0",
+    "@lykmapipo/test-helpers": "^0.3.2",
     "chai": "^4.2.0",
     "commitizen": "^4.0.3",
+    "coveralls": "^3.0.6",
     "cz-conventional-changelog": "^3.0.2",
+    "doxdox": "^3.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsdoc": "^15.8.0",
+    "eslint-plugin-mocha": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "generate-changelog": "^1.8.0",
-    "grunt": "^1.0.4",
-    "grunt-contrib-jshint": "^2.1.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-mocha-test": "^0.13.3",
-    "husky": "^3.0.1",
-    "jshint-stylish": "^2.2.1",
+    "handlebars": "^4.1.2",
+    "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
     "lodash.template": "^4.5.0",
     "mocha": "^6.2.0",
-    "mongoose": ">=5.6.7",
+    "mongoose": "^5.6.9",
+    "npm-check-updates": "^3.1.21",
+    "nyc": "^14.1.1",
     "prettier": "^1.18.2",
-    "sinon": "^7.3.2",
-    "sinon-chai": "^3.3.0"
+    "rimraf": "^2.6.3",
+    "rollup": "^1.19.4",
+    "shelljs": "^0.8.3"
   },
-  "peerDependencies": {
-    "mongoose": ">=5.6.7"
-  },
+  "peerDependencies": {},
   "dependencies": {
-    "@lykmapipo/env": ">=0.11.1",
+    "@lykmapipo/common": ">=0.25.1",
+    "@lykmapipo/env": ">=0.12.1",
+    "@lykmapipo/mongoose-common": ">=0.25.9",
     "async": ">=3.1.0",
     "lodash": ">=4.17.15",
     "phone": ">=2.3.18"
+  },
+  "engines": {
+    "node": ">=12.4.0",
+    "npm": ">=6.9.0"
   },
   "config": {
     "commitizen": {
@@ -81,13 +114,9 @@
     ]
   },
   "lint-staged": {
-    "*.{js}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{md,html}": [
-      "prettier --write",
-      "git add"
+    "src/**/*.js": [
+      "npm run lint",
+      "git add -A"
     ]
   },
   "husky": {
@@ -95,9 +124,5 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "engines": {
-    "node": ">=8.11.1",
-    "npm": ">=5.6.0"
   }
 }
