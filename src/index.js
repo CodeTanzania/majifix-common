@@ -150,6 +150,8 @@ export const unlocalize = (path, data) => {
  * @param {object} parent valid mongoose model instance
  * @param {object} optns valid options
  * @param {string} optns.path parent path on dependant
+ * @param {boolean} [optns.self=false] whether to check self existence,
+ * for hierarchical models
  * @param {string[]} optns.dependencies model name of the dependants
  * @param {Function} done a callback to invoke on success or failure
  * @returns {Function} dependencies cleaner
@@ -167,7 +169,7 @@ export const unlocalize = (path, data) => {
  */
 export const checkDependencyFor = (parent, optns, done) => {
   // ensure options
-  const options = mergeObjects(optns);
+  const options = mergeObjects({ self: false }, optns);
 
   // obtain path
   const { path, dependencies } = options;

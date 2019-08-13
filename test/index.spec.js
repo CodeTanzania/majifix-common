@@ -1,4 +1,4 @@
-import { expect } from '@lykmapipo/test-helpers';
+import { expect, clear } from '@lykmapipo/mongoose-test-helpers';
 import {
   // models
   MODEL_NAME_ACCOUNT,
@@ -58,6 +58,8 @@ import {
 } from '../src';
 
 describe('majifix common', () => {
+  before(done => clear(done));
+
   it('should expose models name', () => {
     expect(MODEL_NAME_ACCOUNT).to.be.equal('Account');
     expect(MODEL_NAME_CONTENT).to.be.equal('Content');
@@ -139,4 +141,6 @@ describe('majifix common', () => {
       done(error);
     });
   });
+
+  after(done => clear(done));
 });
