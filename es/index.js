@@ -1,6 +1,6 @@
-import { forEach, isEmpty, join, split, snakeCase, get } from 'lodash';
+import { forEach, isEmpty, join, split, snakeCase } from 'lodash';
 import { parallel } from 'async';
-import { mergeObjects } from '@lykmapipo/common';
+import { mergeObjects, idOf } from '@lykmapipo/common';
 import { getString } from '@lykmapipo/env';
 import { toCollectionName, copyInstance, isInstance, model } from '@lykmapipo/mongoose-common';
 
@@ -138,13 +138,15 @@ const unlocalize = (path, data) => {
 };
 
 /**
- * @function checkDependencyFor
- * @name checkDependencyFor
+ * @function checkDependenciesFor
+ * @name checkDependenciesFor
  * @description Check if there are dependencies with instances already
  * saved before deleting the parent model
  * @param {object} parent valid mongoose model instance
  * @param {object} optns valid options
  * @param {string} optns.path parent path on dependant
+ * @param {boolean} [optns.self=false] whether to perform self check for
+ * existence, for hierarchical models
  * @param {string[]} optns.dependencies model name of the dependants
  * @param {Function} done a callback to invoke on success or failure
  * @returns {Function} dependencies cleaner
@@ -158,9 +160,9 @@ const unlocalize = (path, data) => {
  *
  * const path = 'jurisdiction';
  * const dependencies = ['Service'];
- * checkDependencyFor(instance, { path, dependencies }, done);
+ * checkDependenciesFor(instance, { path, dependencies }, done);
  */
-const checkDependencyFor = (parent, optns, done) => {
+const checkDependenciesFor = (parent, optns, done) => {
   // ensure options
   const options = mergeObjects(optns);
 
@@ -182,25 +184,28 @@ const checkDependencyFor = (parent, optns, done) => {
     return done();
   }
 
-  // prepare dependencies checker
+  // accumaltor for dependencies checker
   const dependants = {};
-  forEach(dependencies, dependency => {
-    // derive requirements
+
+  // check for provided dependency
+  const checkDependency = dependency => {
     const dependantKey = `check${dependency}Dependency`;
     const Dependant = model(dependency);
     const dependantLabel = join(split(snakeCase(dependency), '_'), ' ');
-    const criteria = { [path]: get(parent, '_id') };
+    const criteria = { [path]: idOf(parent) };
 
     // restrict per existing model
-    if (Dependant) {
-      // collect dependant cleaner
+    // collect dependant cleaner
+    if (Dependant && !isEmpty(criteria)) {
       dependants[dependantKey] = next => {
-        Dependant.count(criteria, (error, count) => {
+        Dependant.countDocuments(criteria, (error, count) => {
           let exception = error;
 
           // warn can not delete due to dependencies
           if (count && count > 0) {
-            const errorMessage = `Fail to Delete. ${count} ${dependantLabel} depend on it`;
+            const errorMessage = `
+            Fail to Delete. ${count} ${dependantLabel} depend on it
+            `;
             exception = new Error(errorMessage);
           }
 
@@ -214,9 +219,12 @@ const checkDependencyFor = (parent, optns, done) => {
         });
       };
     }
-  });
+  };
 
-  // check dependencies
+  // check for each dependency
+  forEach(dependencies, checkDependency);
+
+  // check for all dependencies
   if (!isEmpty(dependants)) {
     return parallel(dependants, error => done(error, parent));
   }
@@ -225,4 +233,4 @@ const checkDependencyFor = (parent, optns, done) => {
   return done();
 };
 
-export { COLLECTION_NAME_ACCOUNT, COLLECTION_NAME_CHANGELOG, COLLECTION_NAME_CONTENT, COLLECTION_NAME_ITEM, COLLECTION_NAME_JURISDICTION, COLLECTION_NAME_PARTY, COLLECTION_NAME_PERMISSION, COLLECTION_NAME_PREDEFINE, COLLECTION_NAME_PRIORITY, COLLECTION_NAME_ROLE, COLLECTION_NAME_SERVICE, COLLECTION_NAME_SERVICEGROUP, COLLECTION_NAME_SERVICEREQUEST, COLLECTION_NAME_SERVICETYPE, COLLECTION_NAME_STATUS, COLLECTION_NAME_ZONE, MODEL_NAME_ACCOUNT, MODEL_NAME_CHANGELOG, MODEL_NAME_CONTENT, MODEL_NAME_ITEM, MODEL_NAME_JURISDICTION, MODEL_NAME_PARTY, MODEL_NAME_PERMISSION, MODEL_NAME_PREDEFINE, MODEL_NAME_PRIORITY, MODEL_NAME_ROLE, MODEL_NAME_SERVICE, MODEL_NAME_SERVICEGROUP, MODEL_NAME_SERVICEREQUEST, MODEL_NAME_SERVICETYPE, MODEL_NAME_STATUS, MODEL_NAME_ZONE, PATH_NAME_ACCOUNT, PATH_NAME_ASSIGNEE, PATH_NAME_CONTENT, PATH_NAME_ITEM, PATH_NAME_JURISDICTION, PATH_NAME_OPERATOR, PATH_NAME_PARTY, PATH_NAME_PERMISSION, PATH_NAME_PRIORITY, PATH_NAME_ROLE, PATH_NAME_SERVICE, PATH_NAME_SERVICEGROUP, PATH_NAME_SERVICEREQUEST, PATH_NAME_SERVICETYPE, PATH_NAME_STATUS, PATH_NAME_ZONE, POPULATION_DEFAULT, POPULATION_MAX_DEPTH, PREDEFINE_BUCKET_BLOCKREASON, PREDEFINE_BUCKET_PRIORITY, PREDEFINE_BUCKET_SERVICE, PREDEFINE_BUCKET_SERVICEGROUP, PREDEFINE_BUCKET_SERVICETYPE, PREDEFINE_BUCKET_STATUS, PREDEFINE_NAMESPACE_BLOCKREASON, PREDEFINE_NAMESPACE_PRIORITY, PREDEFINE_NAMESPACE_SERVICE, PREDEFINE_NAMESPACE_SERVICEGROUP, PREDEFINE_NAMESPACE_SERVICETYPE, PREDEFINE_NAMESPACE_STATUS, checkDependencyFor, unlocalize };
+export { COLLECTION_NAME_ACCOUNT, COLLECTION_NAME_CHANGELOG, COLLECTION_NAME_CONTENT, COLLECTION_NAME_ITEM, COLLECTION_NAME_JURISDICTION, COLLECTION_NAME_PARTY, COLLECTION_NAME_PERMISSION, COLLECTION_NAME_PREDEFINE, COLLECTION_NAME_PRIORITY, COLLECTION_NAME_ROLE, COLLECTION_NAME_SERVICE, COLLECTION_NAME_SERVICEGROUP, COLLECTION_NAME_SERVICEREQUEST, COLLECTION_NAME_SERVICETYPE, COLLECTION_NAME_STATUS, COLLECTION_NAME_ZONE, MODEL_NAME_ACCOUNT, MODEL_NAME_CHANGELOG, MODEL_NAME_CONTENT, MODEL_NAME_ITEM, MODEL_NAME_JURISDICTION, MODEL_NAME_PARTY, MODEL_NAME_PERMISSION, MODEL_NAME_PREDEFINE, MODEL_NAME_PRIORITY, MODEL_NAME_ROLE, MODEL_NAME_SERVICE, MODEL_NAME_SERVICEGROUP, MODEL_NAME_SERVICEREQUEST, MODEL_NAME_SERVICETYPE, MODEL_NAME_STATUS, MODEL_NAME_ZONE, PATH_NAME_ACCOUNT, PATH_NAME_ASSIGNEE, PATH_NAME_CONTENT, PATH_NAME_ITEM, PATH_NAME_JURISDICTION, PATH_NAME_OPERATOR, PATH_NAME_PARTY, PATH_NAME_PERMISSION, PATH_NAME_PRIORITY, PATH_NAME_ROLE, PATH_NAME_SERVICE, PATH_NAME_SERVICEGROUP, PATH_NAME_SERVICEREQUEST, PATH_NAME_SERVICETYPE, PATH_NAME_STATUS, PATH_NAME_ZONE, POPULATION_DEFAULT, POPULATION_MAX_DEPTH, PREDEFINE_BUCKET_BLOCKREASON, PREDEFINE_BUCKET_PRIORITY, PREDEFINE_BUCKET_SERVICE, PREDEFINE_BUCKET_SERVICEGROUP, PREDEFINE_BUCKET_SERVICETYPE, PREDEFINE_BUCKET_STATUS, PREDEFINE_NAMESPACE_BLOCKREASON, PREDEFINE_NAMESPACE_PRIORITY, PREDEFINE_NAMESPACE_SERVICE, PREDEFINE_NAMESPACE_SERVICEGROUP, PREDEFINE_NAMESPACE_SERVICETYPE, PREDEFINE_NAMESPACE_STATUS, checkDependenciesFor, unlocalize };
