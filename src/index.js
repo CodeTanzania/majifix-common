@@ -47,6 +47,7 @@ export const COLLECTION_NAME_SERVICETYPE = toCollectionName(
 
 /* population options */
 export const POPULATION_MAX_DEPTH = 1;
+export const POPULATION_DEFAULT = { maxDepth: POPULATION_MAX_DEPTH };
 
 /* pedefines namespaces */
 

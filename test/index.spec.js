@@ -30,6 +30,9 @@ import {
   COLLECTION_NAME_SERVICE,
   COLLECTION_NAME_SERVICEREQUEST,
   COLLECTION_NAME_SERVICETYPE,
+  // populations
+  POPULATION_MAX_DEPTH,
+  POPULATION_DEFAULT,
   // utilities
   unlocalize,
 } from '../src';
@@ -67,6 +70,17 @@ describe('majifix common', () => {
     expect(COLLECTION_NAME_SERVICE).to.be.equal('services');
     expect(COLLECTION_NAME_SERVICEREQUEST).to.be.equal('servicerequests');
     expect(COLLECTION_NAME_SERVICETYPE).to.be.equal('predefines');
+  });
+
+  it('should expose max auto populate depth', () => {
+    expect(POPULATION_MAX_DEPTH).to.exist;
+    expect(POPULATION_MAX_DEPTH).to.be.equal(1);
+  });
+
+  it('should expose default population', () => {
+    expect(POPULATION_DEFAULT).to.exist;
+    expect(POPULATION_DEFAULT).to.be.an('object');
+    expect(POPULATION_DEFAULT).to.be.eql({ maxDepth: 1 });
   });
 
   it('should unlocalize localize schema path', () => {
