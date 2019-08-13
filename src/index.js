@@ -1,7 +1,12 @@
-import { forEach } from 'lodash';
+import { forEach, get, isEmpty, join, split, snakeCase } from 'lodash';
+import { parallel } from 'async';
 import { mergeObjects } from '@lykmapipo/common';
 import { getString } from '@lykmapipo/env';
-import { toCollectionName, copyInstance } from '@lykmapipo/mongoose-common';
+import {
+  toCollectionName,
+  copyInstance,
+  model,
+} from '@lykmapipo/mongoose-common';
 
 /* models name */
 export const MODEL_NAME_ACCOUNT = 'Account';
@@ -78,7 +83,7 @@ export const PREDEFINE_BUCKET_BLOCKREASON = 'blockreasons';
 /**
  * @function unlocalize
  * @name unlocalize
- * @description flat a given localize schema path value
+ * @description Flatten a given localize schema path value
  * to unlocalized object
  * @param {string} path prefix to used on unlocalized key
  * @param {object} data object to unlocalized
@@ -116,4 +121,82 @@ export const unlocalize = (path, data) => {
 
   // return unlocalized object
   return mergeObjects(unlocalized);
+};
+
+/**
+ * @function checkDependencyFor
+ * @name checkDependencyFor
+ * @description Check if there are dependencies with instances already
+ * saved before deleting the parent model
+ * @param {object} parent valid mongoose model instance
+ * @param {object} optns valid options
+ * @param {string} optns.path parent path on dependant
+ * @param {string[]} optns.dependencies model name of the dependants
+ * @param {Function} done a callback to invoke on success or failure
+ * @returns {Function} dependencies cleaner
+ * @author lally elias <lallyelias87@gmail.com>
+ * @license MIT
+ * @since 0.5.0
+ * @version 0.1.0
+ * @static
+ * @public
+ */
+export const checkDependencyFor = (parent, optns, done) => {
+  // ensure options
+  const options = mergeObjects(optns);
+
+  // obtain path
+  const { path, dependencies } = options;
+
+  // ensure parent path
+  if (isEmpty(path)) {
+    return done();
+  }
+
+  // ensure dependencies
+  if (isEmpty(dependencies)) {
+    return done();
+  }
+
+  // prepare dependencies checker
+  const dependants = {};
+  forEach(dependencies, dependency => {
+    // derive requirements
+    const dependantKey = `check${dependency}Dependency`;
+    const Dependant = model(dependency);
+    const dependantLabel = join(split(snakeCase(dependency), '_'), ' ');
+    const criteria = { [path]: get(parent, '_id') };
+
+    // restrict per existing model
+    if (Dependant) {
+      // collect dependant cleaner
+      dependants[dependantKey] = next => {
+        Dependant.count(criteria, (error, count) => {
+          let exception = error;
+
+          // warn can not delete due to dependencies
+          if (count && count > 0) {
+            const errorMessage = `Fail to Delete. ${count} ${dependantLabel} depend on it`;
+            exception = new Error(errorMessage);
+          }
+
+          // ensure error status
+          if (exception && !exception.status) {
+            exception.status = 400;
+          }
+
+          // return
+          next(exception, parent);
+        });
+      };
+    }
+  });
+
+  // check dependencies
+  if (!isEmpty(dependants)) {
+    return parallel(dependants, error => done(error, parent));
+  }
+
+  // continue
+  return done();
 };
