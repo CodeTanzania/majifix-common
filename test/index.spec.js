@@ -1,4 +1,10 @@
-import { expect, clear } from '@lykmapipo/mongoose-test-helpers';
+import { ObjectId } from '@lykmapipo/mongoose-common';
+import {
+  expect,
+  clear,
+  create,
+  createTestModel,
+} from '@lykmapipo/mongoose-test-helpers';
 import {
   // models
   MODEL_NAME_ACCOUNT,
@@ -59,6 +65,17 @@ import {
 
 describe('majifix common', () => {
   before(done => clear(done));
+
+  const Guardian = createTestModel();
+  const Child = createTestModel({
+    father: { type: ObjectId, ref: Guardian.modelName },
+  });
+
+  const father = Guardian.fake();
+  const child = Child.fake();
+  child.father = father;
+
+  before(done => create(father, child, done));
 
   it('should expose models name', () => {
     expect(MODEL_NAME_ACCOUNT).to.be.equal('Account');
@@ -137,6 +154,13 @@ describe('majifix common', () => {
 
   it('should check dependency for non-model', done => {
     checkDependencyFor({}, {}, error => {
+      expect(error).to.not.exist;
+      done(error);
+    });
+  });
+
+  it('should check dependency for parent without options', done => {
+    checkDependencyFor(father, {}, error => {
       expect(error).to.not.exist;
       done(error);
     });
