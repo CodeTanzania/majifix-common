@@ -1,6 +1,6 @@
-import { forEach, get, isEmpty, join, split, snakeCase } from 'lodash';
+import { forEach, isEmpty, join, split, snakeCase } from 'lodash';
 import { parallel } from 'async';
-import { mergeObjects } from '@lykmapipo/common';
+import { idOf, mergeObjects } from '@lykmapipo/common';
 import { getString } from '@lykmapipo/env';
 import {
   copyInstance,
@@ -143,13 +143,15 @@ export const unlocalize = (path, data) => {
 };
 
 /**
- * @function checkDependencyFor
- * @name checkDependencyFor
+ * @function checkDependenciesFor
+ * @name checkDependenciesFor
  * @description Check if there are dependencies with instances already
  * saved before deleting the parent model
  * @param {object} parent valid mongoose model instance
  * @param {object} optns valid options
  * @param {string} optns.path parent path on dependant
+ * @param {boolean} [optns.self=false] whether to perform self check for
+ * existence, for hierarchical models
  * @param {string[]} optns.dependencies model name of the dependants
  * @param {Function} done a callback to invoke on success or failure
  * @returns {Function} dependencies cleaner
@@ -163,9 +165,9 @@ export const unlocalize = (path, data) => {
  *
  * const path = 'jurisdiction';
  * const dependencies = ['Service'];
- * checkDependencyFor(instance, { path, dependencies }, done);
+ * checkDependenciesFor(instance, { path, dependencies }, done);
  */
-export const checkDependencyFor = (parent, optns, done) => {
+export const checkDependenciesFor = (parent, optns, done) => {
   // ensure options
   const options = mergeObjects(optns);
 
@@ -187,25 +189,28 @@ export const checkDependencyFor = (parent, optns, done) => {
     return done();
   }
 
-  // prepare dependencies checker
+  // accumaltor for dependencies checker
   const dependants = {};
-  forEach(dependencies, dependency => {
-    // derive requirements
+
+  // check for provided dependency
+  const checkDependency = dependency => {
     const dependantKey = `check${dependency}Dependency`;
     const Dependant = model(dependency);
     const dependantLabel = join(split(snakeCase(dependency), '_'), ' ');
-    const criteria = { [path]: get(parent, '_id') };
+    const criteria = { [path]: idOf(parent) };
 
     // restrict per existing model
-    if (Dependant) {
-      // collect dependant cleaner
+    // collect dependant cleaner
+    if (Dependant && !isEmpty(criteria)) {
       dependants[dependantKey] = next => {
-        Dependant.count(criteria, (error, count) => {
+        Dependant.countDocuments(criteria, (error, count) => {
           let exception = error;
 
           // warn can not delete due to dependencies
           if (count && count > 0) {
-            const errorMessage = `Fail to Delete. ${count} ${dependantLabel} depend on it`;
+            const errorMessage = `
+            Fail to Delete. ${count} ${dependantLabel} depend on it
+            `;
             exception = new Error(errorMessage);
           }
 
@@ -219,9 +224,12 @@ export const checkDependencyFor = (parent, optns, done) => {
         });
       };
     }
-  });
+  };
 
-  // check dependencies
+  // check for each dependency
+  forEach(dependencies, checkDependency);
+
+  // check for all dependencies
   if (!isEmpty(dependants)) {
     return parallel(dependants, error => done(error, parent));
   }

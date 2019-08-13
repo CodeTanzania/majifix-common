@@ -1,3 +1,20 @@
+#### 0.15.0 (2019-08-13)
+
+##### Refactors
+
+*  simplify checkDependenciesFor & improve its specs ([d2194f12](https://github.com/CodeTanzania/majifix-common/commit/d2194f122d5807ddffca08ab8162c3fc1c6b6b50))
+
+##### Tests
+
+*  improve checkDepencyFor specs ([33e75925](https://github.com/CodeTanzania/majifix-common/commit/33e75925166a125cfe0bbf652ff8c04da2368125))
+*  add mongoose test helpers ([6675f8e7](https://github.com/CodeTanzania/majifix-common/commit/6675f8e7d28b22e78094a0f94300eb9497ea776f))
+
+#### 0.14.1 (2019-08-13)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([98882815](https://github.com/CodeTanzania/majifix-common/commit/98882815d814748b8c3fd17a7dc58de4f3c38a4b))
+
 #### 0.14.0 (2019-08-13)
 
 ##### Chores

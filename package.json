@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/majifix-common",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Common utilities for majifix",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -63,6 +63,7 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@commitlint/travis-cli": "^8.1.0",
+    "@lykmapipo/mongoose-test-helpers": "^0.7.17",
     "@lykmapipo/test-helpers": "^0.3.2",
     "chai": "^4.2.0",
     "commitizen": "^4.0.3",
@@ -94,7 +95,7 @@
   "dependencies": {
     "@lykmapipo/common": ">=0.25.1",
     "@lykmapipo/env": ">=0.12.1",
-    "@lykmapipo/mongoose-common": ">=0.25.9",
+    "@lykmapipo/mongoose-common": ">=0.25.10",
     "async": ">=3.1.0",
     "lodash": ">=4.17.15",
     "phone": ">=2.3.18"

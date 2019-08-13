@@ -1,4 +1,4 @@
-import { expect } from '@lykmapipo/test-helpers';
+import { expect } from '@lykmapipo/mongoose-test-helpers';
 import {
   // models
   MODEL_NAME_ACCOUNT,
@@ -54,10 +54,10 @@ import {
   POPULATION_DEFAULT,
   // utilities
   unlocalize,
-  checkDependencyFor,
+  checkDependenciesFor,
 } from '../src';
 
-describe('majifix common', () => {
+describe('unit', () => {
   it('should expose models name', () => {
     expect(MODEL_NAME_ACCOUNT).to.be.equal('Account');
     expect(MODEL_NAME_CONTENT).to.be.equal('Content');
@@ -134,7 +134,7 @@ describe('majifix common', () => {
   });
 
   it('should check dependency for non-model', done => {
-    checkDependencyFor({}, {}, error => {
+    checkDependenciesFor({}, {}, error => {
       expect(error).to.not.exist;
       done(error);
     });
