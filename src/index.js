@@ -1,31 +1,30 @@
-import schema from './schema';
-import models from './models';
-
-Object.defineProperties(exports, {
-  schema: {
-    get() {
-      return schema;
-    },
-  },
-  models: {
-    get() {
-      return models;
-    },
-  },
-});
+/* models name */
+export const MODEL_NAME_ACCOUNT = 'Account';
+export const MODEL_NAME_CONTENT = 'Content';
+export const MODEL_NAME_CHANGELOG = 'Changelog';
+export const MODEL_NAME_JURISDICTION = 'Jurisdiction';
+export const MODEL_NAME_PARTY = 'Party';
+export const MODEL_NAME_PERMISSION = 'Permission';
+export const MODEL_NAME_PREDEFINE = 'Predefine';
+export const MODEL_NAME_PRIORITY = 'Priority';
+export const MODEL_NAME_ROLE = 'Role';
+export const MODEL_NAME_STATUS = 'Status';
+export const MODEL_NAME_SERVICEGROUP = 'ServiceGroup';
+export const MODEL_NAME_SERVICE = 'Service';
+export const MODEL_NAME_SERVICEREQUEST = 'ServiceRequest';
 
 /* pedefines namespaces */
-exports.PREDEFINE_NAMESPACE_PRIORITY = 'Priority';
-exports.PREDEFINE_NAMESPACE_STATUS = 'Status';
-exports.PREDEFINE_NAMESPACE_SERVICEGROUP = 'ServiceGroup';
-exports.PREDEFINE_NAMESPACE_SERVICETYPE = 'ServiceType';
-exports.PREDEFINE_NAMESPACE_SERVICE = 'Service';
-exports.PREDEFINE_NAMESPACE_BLOCKREASON = 'BlockReason';
+export const PREDEFINE_NAMESPACE_PRIORITY = 'Priority';
+export const PREDEFINE_NAMESPACE_STATUS = 'Status';
+export const PREDEFINE_NAMESPACE_SERVICEGROUP = 'ServiceGroup';
+export const PREDEFINE_NAMESPACE_SERVICETYPE = 'ServiceType';
+export const PREDEFINE_NAMESPACE_SERVICE = 'Service';
+export const PREDEFINE_NAMESPACE_BLOCKREASON = 'BlockReason';
 
 /* pedefines buckets */
-exports.PREDEFINE_BUCKET_PRIORITY = 'priorities';
-exports.PREDEFINE_BUCKET_STATUS = 'statuses';
-exports.PREDEFINE_BUCKET_SERVICEGROUP = 'servicegroups';
-exports.PREDEFINE_BUCKET_SERVICETYPE = 'servicetypes';
-exports.PREDEFINE_BUCKET_SERVICE = 'services';
-exports.PREDEFINE_BUCKET_BLOCKREASON = 'blockreasons';
+export const PREDEFINE_BUCKET_PRIORITY = 'priorities';
+export const PREDEFINE_BUCKET_STATUS = 'statuses';
+export const PREDEFINE_BUCKET_SERVICEGROUP = 'servicegroups';
+export const PREDEFINE_BUCKET_SERVICETYPE = 'servicetypes';
+export const PREDEFINE_BUCKET_SERVICE = 'services';
+export const PREDEFINE_BUCKET_BLOCKREASON = 'blockreasons';
