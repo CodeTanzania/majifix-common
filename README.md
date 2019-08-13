@@ -22,19 +22,11 @@ npm install --save @codetanzania/majifix-common
 ## Usage
 
 ```js
-const {
+import {
  MODEL_NAME_JURISDICTION,
- MODEL_NAME_PARTY,
- MODEL_NAME_PERMISSION,
- MODEL_NAME_PREDEFINE,
- MODEL_NAME_PRIORITY,
- MODEL_NAME_ROLE,
- MODEL_NAME_STATUS,
- MODEL_NAME_SERVICEGROUP,
- MODEL_NAME_SERVICE,
- MODEL_NAME_SERVICEREQUEST,
- MODEL_NAME_SERVICETYPE
-} = require('@codetanzania/majifix-common');
+ COLLECTION_NAME_JURISDICTION,
+ PATH_NAME_JURISDICTION,
+} from '@codetanzania/majifix-common';
 ```
 
 ## Test
