@@ -34,6 +34,21 @@ import {
   COLLECTION_NAME_SERVICEREQUEST,
   COLLECTION_NAME_SERVICETYPE,
   COLLECTION_NAME_ZONE,
+  // paths
+  PATH_NAME_ACCOUNT,
+  PATH_NAME_CONTENT,
+  PATH_NAME_ITEM,
+  PATH_NAME_JURISDICTION,
+  PATH_NAME_PARTY,
+  PATH_NAME_PERMISSION,
+  PATH_NAME_PRIORITY,
+  PATH_NAME_ROLE,
+  PATH_NAME_STATUS,
+  PATH_NAME_SERVICEGROUP,
+  PATH_NAME_SERVICE,
+  PATH_NAME_SERVICEREQUEST,
+  PATH_NAME_SERVICETYPE,
+  PATH_NAME_ZONE,
   // populations
   POPULATION_MAX_DEPTH,
   POPULATION_DEFAULT,
@@ -79,6 +94,23 @@ describe('majifix common', () => {
     expect(COLLECTION_NAME_SERVICEREQUEST).to.be.equal('servicerequests');
     expect(COLLECTION_NAME_SERVICETYPE).to.be.equal('predefines');
     expect(COLLECTION_NAME_ZONE).to.be.equal('predefines');
+  });
+
+  it('should expose paths name', () => {
+    expect(PATH_NAME_ACCOUNT).to.be.equal('account');
+    expect(PATH_NAME_CONTENT).to.be.equal('content');
+    expect(PATH_NAME_ITEM).to.be.equal('item');
+    expect(PATH_NAME_JURISDICTION).to.be.equal('jurisdiction');
+    expect(PATH_NAME_PARTY).to.be.equal('party');
+    expect(PATH_NAME_PERMISSION).to.be.equal('permission');
+    expect(PATH_NAME_PRIORITY).to.be.equal('priority');
+    expect(PATH_NAME_ROLE).to.be.equal('role');
+    expect(PATH_NAME_STATUS).to.be.equal('status');
+    expect(PATH_NAME_SERVICEGROUP).to.be.equal('group');
+    expect(PATH_NAME_SERVICE).to.be.equal('service');
+    expect(PATH_NAME_SERVICEREQUEST).to.be.equal('request');
+    expect(PATH_NAME_SERVICETYPE).to.be.equal('type');
+    expect(PATH_NAME_ZONE).to.be.equal('zone');
   });
 
   it('should expose max auto populate depth', () => {

@@ -55,6 +55,24 @@ export const COLLECTION_NAME_SERVICETYPE = toCollectionName(
 );
 export const COLLECTION_NAME_ZONE = toCollectionName(MODEL_NAME_ZONE);
 
+/* paths name */
+export const PATH_NAME_ACCOUNT = 'account';
+export const PATH_NAME_ASSIGNEE = 'assignee';
+export const PATH_NAME_CONTENT = 'content';
+export const PATH_NAME_ITEM = 'item';
+export const PATH_NAME_JURISDICTION = 'jurisdiction';
+export const PATH_NAME_OPERATOR = 'operator';
+export const PATH_NAME_PARTY = 'party';
+export const PATH_NAME_PERMISSION = 'permission';
+export const PATH_NAME_PRIORITY = 'priority';
+export const PATH_NAME_ROLE = 'role';
+export const PATH_NAME_STATUS = 'status';
+export const PATH_NAME_SERVICEGROUP = 'group';
+export const PATH_NAME_SERVICE = 'service';
+export const PATH_NAME_SERVICEREQUEST = 'request';
+export const PATH_NAME_SERVICETYPE = 'type';
+export const PATH_NAME_ZONE = 'zone';
+
 /* population options */
 export const POPULATION_MAX_DEPTH = 1;
 export const POPULATION_DEFAULT = { maxDepth: POPULATION_MAX_DEPTH };
