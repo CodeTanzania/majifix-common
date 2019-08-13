@@ -6,7 +6,8 @@ import { toCollectionName, copyInstance } from '@lykmapipo/mongoose-common';
 /* models name */
 export const MODEL_NAME_ACCOUNT = 'Account';
 export const MODEL_NAME_CONTENT = 'Content';
-export const MODEL_NAME_CHANGELOG = 'Changelog';
+export const MODEL_NAME_CHANGELOG = 'ChangeLog';
+export const MODEL_NAME_ITEM = 'Predefine';
 export const MODEL_NAME_JURISDICTION = 'Jurisdiction';
 export const MODEL_NAME_PARTY = 'Party';
 export const MODEL_NAME_PERMISSION = 'Permission';
@@ -18,11 +19,13 @@ export const MODEL_NAME_SERVICEGROUP = 'ServiceGroup';
 export const MODEL_NAME_SERVICE = 'Service';
 export const MODEL_NAME_SERVICEREQUEST = 'ServiceRequest';
 export const MODEL_NAME_SERVICETYPE = 'Predefine';
+export const MODEL_NAME_ZONE = 'Predefine';
 
 /* collections name */
 export const COLLECTION_NAME_ACCOUNT = toCollectionName(MODEL_NAME_ACCOUNT);
 export const COLLECTION_NAME_CONTENT = toCollectionName(MODEL_NAME_CONTENT);
 export const COLLECTION_NAME_CHANGELOG = toCollectionName(MODEL_NAME_CHANGELOG);
+export const COLLECTION_NAME_ITEM = toCollectionName(MODEL_NAME_ITEM);
 export const COLLECTION_NAME_JURISDICTION = toCollectionName(
   MODEL_NAME_JURISDICTION
 );
@@ -44,6 +47,7 @@ export const COLLECTION_NAME_SERVICEREQUEST = toCollectionName(
 export const COLLECTION_NAME_SERVICETYPE = toCollectionName(
   MODEL_NAME_SERVICETYPE
 );
+export const COLLECTION_NAME_ZONE = toCollectionName(MODEL_NAME_ZONE);
 
 /* population options */
 export const POPULATION_MAX_DEPTH = 1;
