@@ -3,9 +3,10 @@ import { parallel } from 'async';
 import { mergeObjects } from '@lykmapipo/common';
 import { getString } from '@lykmapipo/env';
 import {
-  toCollectionName,
   copyInstance,
+  isInstance,
   model,
+  toCollectionName,
 } from '@lykmapipo/mongoose-common';
 
 /* models name */
@@ -140,6 +141,11 @@ export const unlocalize = (path, data) => {
  * @version 0.1.0
  * @static
  * @public
+ * @example
+ *
+ * const path = 'jurisdiction';
+ * const dependencies = ['Service'];
+ * checkDependencyFor(instance, { path, dependencies }, done);
  */
 export const checkDependencyFor = (parent, optns, done) => {
   // ensure options
@@ -147,6 +153,11 @@ export const checkDependencyFor = (parent, optns, done) => {
 
   // obtain path
   const { path, dependencies } = options;
+
+  // ensure valid model instance for parent
+  if (!isInstance(parent)) {
+    return done();
+  }
 
   // ensure parent path
   if (isEmpty(path)) {

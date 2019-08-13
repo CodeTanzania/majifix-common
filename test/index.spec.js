@@ -39,6 +39,7 @@ import {
   POPULATION_DEFAULT,
   // utilities
   unlocalize,
+  checkDependencyFor,
 } from '../src';
 
 describe('majifix common', () => {
@@ -98,5 +99,12 @@ describe('majifix common', () => {
     expect(unlocalized).to.have.property('greeting');
     expect(unlocalized).to.have.property('greeting_en');
     expect(unlocalized).to.have.property('greeting_sw');
+  });
+
+  it('should check dependency for non-model', done => {
+    checkDependencyFor({}, {}, error => {
+      expect(error).to.not.exist;
+      done(error);
+    });
   });
 });
