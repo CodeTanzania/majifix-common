@@ -23,9 +23,9 @@ npm install --save @codetanzania/majifix-common
 
 ```js
 import {
- MODEL_NAME_JURISDICTION,
- COLLECTION_NAME_JURISDICTION,
- PATH_NAME_JURISDICTION,
+ MODEL_NAME_JURISDICTION, // => 'Jurisdiction'
+ COLLECTION_NAME_JURISDICTION, // => 'jurisdictions'
+ PATH_NAME_JURISDICTION, // => 'jurisdiction'
 } from '@codetanzania/majifix-common';
 ```
 
