@@ -1,4 +1,7 @@
-import { toCollectionName } from '@lykmapipo/mongoose-common';
+import { forEach } from 'lodash';
+import { mergeObjects } from '@lykmapipo/common';
+import { getString } from '@lykmapipo/env';
+import { toCollectionName, copyInstance } from '@lykmapipo/mongoose-common';
 
 /* models name */
 export const MODEL_NAME_ACCOUNT = 'Account';
@@ -64,3 +67,48 @@ export const PREDEFINE_BUCKET_SERVICEGROUP = 'servicegroups';
 export const PREDEFINE_BUCKET_SERVICETYPE = 'servicetypes';
 export const PREDEFINE_BUCKET_SERVICE = 'services';
 export const PREDEFINE_BUCKET_BLOCKREASON = 'blockreasons';
+
+/* utilities */
+
+/**
+ * @function unlocalize
+ * @name unlocalize
+ * @description flat a given localize schema path value
+ * to unlocalized object
+ * @param {string} path prefix to used on unlocalized key
+ * @param {object} data object to unlocalized
+ * @returns {object} unlocalize schema paths
+ * @author lally elias <lallyelias87@gmail.com>
+ * @license MIT
+ * @since 0.1.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * const obj = mergeObjects('group',{ en: 'One', sw: 'Moja' });
+ * // => { group_en: 'One', group_sw: 'Moja' };
+ */
+export const unlocalize = (path, data) => {
+  // prepare unlocalized data
+  const unlocalized = {};
+
+  // prepare localized
+  const localized = copyInstance(data);
+
+  // unlocalize each locale for a path
+  forEach(localized, (value, locale) => {
+    // handle default locale
+    const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
+    if (locale === DEFAULT_LOCALE) {
+      unlocalized[path] = value;
+    }
+
+    // handle other locales
+    const key = `${path}_${locale}`;
+    unlocalized[key] = value;
+  });
+
+  // return unlocalized object
+  return mergeObjects(unlocalized);
+};

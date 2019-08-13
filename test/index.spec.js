@@ -30,6 +30,8 @@ import {
   COLLECTION_NAME_SERVICE,
   COLLECTION_NAME_SERVICEREQUEST,
   COLLECTION_NAME_SERVICETYPE,
+  // utilities
+  unlocalize,
 } from '../src';
 
 describe('majifix common', () => {
@@ -65,5 +67,14 @@ describe('majifix common', () => {
     expect(COLLECTION_NAME_SERVICE).to.be.equal('services');
     expect(COLLECTION_NAME_SERVICEREQUEST).to.be.equal('servicerequests');
     expect(COLLECTION_NAME_SERVICETYPE).to.be.equal('predefines');
+  });
+
+  it('should unlocalize localize schema path', () => {
+    const object = { en: 'Hello', sw: 'Mambo' };
+    const unlocalized = unlocalize('greeting', object);
+    expect(unlocalized).to.exist;
+    expect(unlocalized).to.have.property('greeting');
+    expect(unlocalized).to.have.property('greeting_en');
+    expect(unlocalized).to.have.property('greeting_sw');
   });
 });
