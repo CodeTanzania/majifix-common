@@ -1,3 +1,38 @@
+#### 0.14.0 (2019-08-13)
+
+##### Chores
+
+* **deps:**
+  *  force latest version & audit fix ([bcf09cf4](https://github.com/CodeTanzania/majifix-common/commit/bcf09cf4bdf82c22c5fb4e469ce2d19a9b9deabb))
+  *  force latest version & audit fix ([8586d9e6](https://github.com/CodeTanzania/majifix-common/commit/8586d9e65df6fc4944c7d3ebeb739aae351a69c7))
+* **ci:**  force latest node version ([90270d40](https://github.com/CodeTanzania/majifix-common/commit/90270d4077898684086066b851375d1b27cd0db1))
+
+##### Documentation Changes
+
+*  update build status badge to use develop branch ([3e617f09](https://github.com/CodeTanzania/majifix-common/commit/3e617f09181fb980063e924c94f68d2ae1b3d701))
+*  update usage docs ([9365dfcc](https://github.com/CodeTanzania/majifix-common/commit/9365dfccfbcc2238fb74f208b17fdb7c506a1e79))
+*  improve usage docs for es6 ([dc971927](https://github.com/CodeTanzania/majifix-common/commit/dc971927ee4da2d6316c89a019d3b9b8bd1bc036))
+*  update usage docs ([11c0e420](https://github.com/CodeTanzania/majifix-common/commit/11c0e4205c193dd1d185c34cd1eb77fe87cbac9b))
+*  update status badges ([f682a849](https://github.com/CodeTanzania/majifix-common/commit/f682a849b8bb17e8107f5e02e9c987e0fe45e15d))
+
+##### Refactors
+
+*  add common path names ([3efb8035](https://github.com/CodeTanzania/majifix-common/commit/3efb80351a0ab91e79bb05539cb48288d59e8c2d))
+*  remove old package.json ([09372532](https://github.com/CodeTanzania/majifix-common/commit/093725324cac01b6c834ace8147357af01fcc202))
+*  extract checkDependencyFor ([656f23a1](https://github.com/CodeTanzania/majifix-common/commit/656f23a1e0f1150a7aa9be349dcc1a560e842a49))
+*  add item & zone model and collection names ([7cd29bcb](https://github.com/CodeTanzania/majifix-common/commit/7cd29bcbf25fb3b2b8bb512e0f24c43b2397b840))
+*  remove unused helpers ([3a2e7b3d](https://github.com/CodeTanzania/majifix-common/commit/3a2e7b3d6fd71cad5d382781fc1310b45a15ade5))
+*  add population options ([24f4f398](https://github.com/CodeTanzania/majifix-common/commit/24f4f3986f662f0c652ee2e12370f5f72919d0b5))
+*  expose unlocalize helper ([785d57c7](https://github.com/CodeTanzania/majifix-common/commit/785d57c78ba26de253e40c9a2e38c9ca5fa15d5a))
+*  mark predefine options to use models and collections name ([496fd8ea](https://github.com/CodeTanzania/majifix-common/commit/496fd8ea75af129784822f089e60a9a51f6283d3))
+*  expose collections name ([2c554593](https://github.com/CodeTanzania/majifix-common/commit/2c554593b99d6d979ecd5b7d91a349dc4eaa9524))
+*  expose common models name ([61e093d1](https://github.com/CodeTanzania/majifix-common/commit/61e093d15b65c666bd6b71eb9b292dba80a99b61))
+*  start migrate to es6 ([403b5422](https://github.com/CodeTanzania/majifix-common/commit/403b542255e783ac82959435d65e481a1e63cda0))
+
+##### Tests
+
+*  add checkDependencyFor a given model instance ([f31881f3](https://github.com/CodeTanzania/majifix-common/commit/f31881f3c792dc43852e2f0b1d111f13086925f0))
+
 #### 0.13.0 (2019-07-27)
 
 ##### Chores
