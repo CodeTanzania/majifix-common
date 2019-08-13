@@ -1,6 +1,6 @@
 # majifix-common
 
-[![Build Status](https://travis-ci.org/CodeTanzania/majifix-common.svg?branch=master)](https://travis-ci.org/CodeTanzania/majifix-common)
+[![Build Status](https://travis-ci.org/CodeTanzania/majifix-common.svg?branch=develop)](https://travis-ci.org/CodeTanzania/majifix-common)
 [![Dependencies Status](https://david-dm.org/CodeTanzania/majifix-common.svg?style=flat-square)](https://david-dm.org/CodeTanzania/majifix-common)
 [![Coverage Status](https://coveralls.io/repos/github/CodeTanzania/majifix-common/badge.svg?branch=master)](https://coveralls.io/github/CodeTanzania/majifix-common?branch=master)
 
