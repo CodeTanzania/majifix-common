@@ -2,6 +2,7 @@ import { expect } from '@lykmapipo/mongoose-test-helpers';
 import {
   // models
   MODEL_NAME_ACCOUNT,
+  MODEL_NAME_ALERT,
   MODEL_NAME_CONTENT,
   MODEL_NAME_CHANGELOG,
   MODEL_NAME_ITEM,
@@ -19,6 +20,7 @@ import {
   MODEL_NAME_ZONE,
   // collections
   COLLECTION_NAME_ACCOUNT,
+  COLLECTION_NAME_ALERT,
   COLLECTION_NAME_CONTENT,
   COLLECTION_NAME_CHANGELOG,
   COLLECTION_NAME_ITEM,
@@ -60,6 +62,7 @@ import {
 describe('unit', () => {
   it('should expose models name', () => {
     expect(MODEL_NAME_ACCOUNT).to.be.equal('Account');
+    expect(MODEL_NAME_ALERT).to.be.equal('Alert');
     expect(MODEL_NAME_CONTENT).to.be.equal('Content');
     expect(MODEL_NAME_CHANGELOG).to.be.equal('ChangeLog');
     expect(MODEL_NAME_ITEM).to.be.equal('Predefine');
@@ -78,6 +81,7 @@ describe('unit', () => {
   });
 
   it('should expose collections name', () => {
+    expect(COLLECTION_NAME_ALERT).to.be.equal('alerts');
     expect(COLLECTION_NAME_ACCOUNT).to.be.equal('accounts');
     expect(COLLECTION_NAME_CONTENT).to.be.equal('contents');
     expect(COLLECTION_NAME_CHANGELOG).to.be.equal('changelogs');

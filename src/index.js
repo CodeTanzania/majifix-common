@@ -11,6 +11,7 @@ import {
 
 /* models name */
 export const MODEL_NAME_ACCOUNT = 'Account';
+export const MODEL_NAME_ALERT = 'Alert';
 export const MODEL_NAME_CONTENT = 'Content';
 export const MODEL_NAME_CHANGELOG = 'ChangeLog';
 export const MODEL_NAME_ITEM = 'Predefine';
@@ -29,6 +30,7 @@ export const MODEL_NAME_ZONE = 'Predefine';
 
 /* collections name */
 export const COLLECTION_NAME_ACCOUNT = toCollectionName(MODEL_NAME_ACCOUNT);
+export const COLLECTION_NAME_ALERT = toCollectionName(MODEL_NAME_ALERT);
 export const COLLECTION_NAME_CONTENT = toCollectionName(MODEL_NAME_CONTENT);
 export const COLLECTION_NAME_CHANGELOG = toCollectionName(MODEL_NAME_CHANGELOG);
 export const COLLECTION_NAME_ITEM = toCollectionName(MODEL_NAME_ITEM);
