@@ -1,3 +1,13 @@
+#### 0.16.0 (2019-08-25)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([f173dec9](https://github.com/CodeTanzania/majifix-common/commit/f173dec9855428768153acdc9f4f7da5e59aaf1b))
+
+##### New Features
+
+*  add alert model and collection name ([cfba7dc3](https://github.com/CodeTanzania/majifix-common/commit/cfba7dc3598230f5bb0b780a4120beab47465ac1))
+
 #### 0.15.1 (2019-08-20)
 
 ##### Chores
