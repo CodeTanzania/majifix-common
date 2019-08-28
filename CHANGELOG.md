@@ -1,3 +1,25 @@
+#### 0.17.0 (2019-08-28)
+
+##### Chores
+
+*  improve package keywords ([459bfec2](https://github.com/CodeTanzania/majifix-common/commit/459bfec2a79d3c635d93418e06bd00c6573da765))
+*  ensure mongoose peer dependency ([cf1d0a2e](https://github.com/CodeTanzania/majifix-common/commit/cf1d0a2e058ab3d00deb3c86fb4804f02d25ad2d))
+* **deps:**
+  *  force latest version & audit fix ([cce97753](https://github.com/CodeTanzania/majifix-common/commit/cce97753d3fa50fa8d15a9fabfa6151335dfc482))
+  *  force latest version & audit fix ([3ea9dc05](https://github.com/CodeTanzania/majifix-common/commit/3ea9dc05d5676859db85a6cf7fceb565395e3a0e))
+* **lint:**  ignore apidoc.js ([363509cf](https://github.com/CodeTanzania/majifix-common/commit/363509cf3e651d36d3e41c225fec450526d4e261))
+* **configs:**
+  *  update eslint configs ([f99d552a](https://github.com/CodeTanzania/majifix-common/commit/f99d552aed3ab70997aac2d20388c8772855148e))
+  *  update prettier configs ([0fa84d9a](https://github.com/CodeTanzania/majifix-common/commit/0fa84d9abc4ee87413ab7626aa6e48876dc67c0c))
+  *  update npm files ([747586a9](https://github.com/CodeTanzania/majifix-common/commit/747586a969633718ba0e05a35862a3fa145214ca))
+  *  update git files ([9205d01b](https://github.com/CodeTanzania/majifix-common/commit/9205d01b2b26a895bf47610faea9bd7da340a256))
+* **ci:**  update travis configs ([beb9e0bb](https://github.com/CodeTanzania/majifix-common/commit/beb9e0bb42f01db29f2d08ea6a613501a2e8a536))
+
+##### Documentation Changes
+
+*  update requirements version ([ba20520b](https://github.com/CodeTanzania/majifix-common/commit/ba20520bcf1b1295aabaa1c8bf4b1f07c48d7c1f))
+*  update status badges ([5a1a8358](https://github.com/CodeTanzania/majifix-common/commit/5a1a8358fc323ff4a880441bcf929de9674a9c1d))
+
 #### 0.16.0 (2019-08-25)
 
 ##### Chores
