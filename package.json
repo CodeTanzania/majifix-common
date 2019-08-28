@@ -91,7 +91,9 @@
     "rollup": "^1.20.3",
     "shelljs": "^0.8.3"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "mongoose": ">=5.6.11"
+  },
   "dependencies": {
     "@lykmapipo/common": ">=0.25.2",
     "@lykmapipo/env": ">=0.12.2",
