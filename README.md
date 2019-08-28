@@ -1,17 +1,23 @@
 # majifix-common
 
 [![Build Status](https://travis-ci.org/CodeTanzania/majifix-common.svg?branch=develop)](https://travis-ci.org/CodeTanzania/majifix-common)
-[![Dependencies Status](https://david-dm.org/CodeTanzania/majifix-common.svg?style=flat-square)](https://david-dm.org/CodeTanzania/majifix-common)
-[![Coverage Status](https://coveralls.io/repos/github/CodeTanzania/majifix-common/badge.svg?branch=master)](https://coveralls.io/github/CodeTanzania/majifix-common?branch=master)
+[![Dependencies Status](https://david-dm.org/CodeTanzania/majifix-common.svg)](https://david-dm.org/CodeTanzania/majifix-common)
+[![Coverage Status](https://coveralls.io/repos/github/CodeTanzania/majifix-common/badge.svg?branch=develop)](https://coveralls.io/github/CodeTanzania/majifix-common?branch=develop)
+[![GitHub License](https://img.shields.io/github/license/CodeTanzania/majifix-common)](https://github.com/CodeTanzania/majifix-common/blob/develop/LICENSE) 
+
+[![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
+[![npm version](https://img.shields.io/npm/v/@codetanzania/majifix-common)](https://www.npmjs.com/package/@codetanzania/majifix-common)
 
 Common utilities for majifix
 
 ## Requirements
 
-- [NodeJS v8.11.1+](https://nodejs.org)
-- [Npm v5.6.0+](https://www.npmjs.com/)
-- [MongoDB v3.4.10+](https://www.mongodb.com/)
-- [Mongoose v5.1.2+](https://github.com/Automattic/mongoose)
+- [NodeJS v12+](https://nodejs.org)
+- [Npm v6+](https://www.npmjs.com/)
+- [MongoDB v4+](https://www.mongodb.com/)
+- [Mongoose v5.6+](https://github.com/Automattic/mongoose)
 
 ## Installation
 

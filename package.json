@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/majifix-common",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "description": "Common utilities for majifix",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -8,11 +8,11 @@
     "clean": "rimraf lib dist es umd logs",
     "prebuild": "npm test && npm run clean",
     "build": "rollup -c",
-    "lint": "eslint --fix --ext .js src/ test/ rollup.config.js",
+    "lint": "eslint --fix --ext .js src/ test/ rollup.config.js examples/",
     "pretest": "npm run lint",
-    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --exit --require @babel/register test/**/*.spec.js",
-    "test:unit": "npm run pretest && NODE_ENV=test mocha --require @babel/register test/unit/**/*.spec.js",
-    "test:integration": "npm run pretest && NODE_ENV=test mocha --require @babel/register test/integration/**/*.spec.js",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --exit --timeout=8000 --require @babel/register test/**/*.spec.js",
+    "test:unit": "NODE_ENV=test npm run pretest && NODE_ENV=test mocha --exit --timeout=8000 --require @babel/register test/unit/**/*.spec.js",
+    "test:integration": "NODE_ENV=test npm run pretest && NODE_ENV=test mocha --exit --timeout=8000 --require @babel/register test/integration/**/*.spec.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "docs": "doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md",
     "cmt": "git add -A && git-cz",
@@ -21,11 +21,14 @@
     "lint:config": "eslint --print-config rollup.config.js"
   },
   "keywords": [
-    "open311",
-    "311",
     "codetanzania",
-    "status",
-    "pipeline"
+    "majifix",
+    "majifi-module",
+    "common",
+    "helpers",
+    "utilities",
+    "constants",
+    "defaults"
   ],
   "repository": {
     "type": "git",
@@ -63,8 +66,8 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@commitlint/travis-cli": "^8.1.0",
-    "@lykmapipo/mongoose-test-helpers": "^0.7.17",
-    "@lykmapipo/test-helpers": "^0.3.2",
+    "@lykmapipo/mongoose-test-helpers": "^0.7.18",
+    "@lykmapipo/test-helpers": "^0.3.3",
     "chai": "^4.2.0",
     "commitizen": "^4.0.3",
     "coveralls": "^3.0.6",
@@ -80,25 +83,27 @@
     "generate-changelog": "^1.8.0",
     "handlebars": "^4.1.2",
     "husky": "^3.0.4",
-    "lint-staged": "^9.2.3",
+    "lint-staged": "^9.2.5",
     "lodash.template": "^4.5.0",
     "mocha": "^6.2.0",
-    "mongoose": "^5.6.10",
+    "mongoose": "^5.6.11",
     "npm-check-updates": "^3.1.21",
     "nyc": "^14.1.1",
     "prettier": "^1.18.2",
     "rimraf": "^3.0.0",
-    "rollup": "^1.20.2",
+    "rollup": "^1.20.3",
     "shelljs": "^0.8.3"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "mongoose": ">=5.6.11"
+  },
   "dependencies": {
-    "@lykmapipo/common": ">=0.25.1",
-    "@lykmapipo/env": ">=0.12.1",
-    "@lykmapipo/mongoose-common": ">=0.25.10",
+    "@lykmapipo/common": ">=0.25.2",
+    "@lykmapipo/env": ">=0.12.2",
+    "@lykmapipo/mongoose-common": ">=0.25.11",
     "async": ">=3.1.0",
     "lodash": ">=4.17.15",
-    "phone": ">=2.3.19"
+    "phone": ">=2.3.21"
   },
   "engines": {
     "node": ">=12.4.0",
