@@ -58,6 +58,10 @@ import {
   VISIBILITY_PRIVATE,
   VISIBILITY_PUBLIC,
   VISIBILITIES,
+  // counters
+  COUNTER_YEAR_FORMAT,
+  COUNTER_PREFIX,
+  COUNTER_PAD_SIZE,
   // utilities
   unlocalize,
   checkDependenciesFor,
@@ -139,6 +143,12 @@ describe('unit', () => {
       VISIBILITY_PRIVATE,
       VISIBILITY_PUBLIC,
     ]);
+  });
+
+  it('should expose counters', () => {
+    expect(COUNTER_PREFIX).to.exist.and.be.equal('');
+    expect(COUNTER_PAD_SIZE).to.exist.and.be.equal(4);
+    expect(COUNTER_YEAR_FORMAT).to.exist.and.be.equal('YY');
   });
 
   it('should unlocalize localize schema path', () => {

@@ -1,13 +1,17 @@
 import { forEach, isEmpty, join, split, snakeCase } from 'lodash';
 import { parallel } from 'async';
 import { idOf, mergeObjects } from '@lykmapipo/common';
-import { getString } from '@lykmapipo/env';
+import { getString, getNumber } from '@lykmapipo/env';
 import {
   copyInstance,
   isInstance,
   model,
   toCollectionName,
 } from '@lykmapipo/mongoose-common';
+
+//
+// constants
+//
 
 /* models name */
 export const MODEL_NAME_ACCOUNT = 'Account';
@@ -104,7 +108,14 @@ export const VISIBILITY_PUBLIC = 'Public';
 export const VISIBILITY_PRIVATE = 'Private';
 export const VISIBILITIES = [VISIBILITY_PRIVATE, VISIBILITY_PUBLIC];
 
-/* utilities */
+/* counters */
+export const COUNTER_YEAR_FORMAT = getString('COUNTER_YEAR_FORMAT', 'YY');
+export const COUNTER_PREFIX = getString('COUNTER_PREFIX', '');
+export const COUNTER_PAD_SIZE = getNumber('COUNTER_PAD_SIZE', 4);
+
+//
+// utilities
+//
 
 /**
  * @function unlocalize
@@ -204,7 +215,9 @@ export const checkDependenciesFor = (parent, optns, done) => {
     const dependantKey = `check${dependency}Dependency`;
     const Dependant = model(dependency);
     const dependantLabel = join(split(snakeCase(dependency), '_'), ' ');
-    const criteria = { [path]: idOf(parent) };
+    const criteria = {
+      [path]: idOf(parent),
+    };
 
     // restrict per existing model
     // collect dependant cleaner
