@@ -1,3 +1,17 @@
+#### 0.18.0 (2019-10-16)
+
+##### Chores
+
+* **deps:**
+  *  force latest versions ([dd1c189b](https://github.com/CodeTanzania/majifix-common/commit/dd1c189b361046d50e68a2854c010856bbd740bd))
+  *  force latest version & audit fix ([a994b9fe](https://github.com/CodeTanzania/majifix-common/commit/a994b9fe6991de6f2014f1617bb746ca627c27ee))
+
+##### New Features
+
+*  add contact methods ([0a41c0f7](https://github.com/CodeTanzania/majifix-common/commit/0a41c0f760b738d19f051a809aa13fb92e021ab7))
+*  add counter constants ([d67c3878](https://github.com/CodeTanzania/majifix-common/commit/d67c3878640c0fe814b94ca21001dad6d0381864))
+*  add visibilities ([6a6ecb4a](https://github.com/CodeTanzania/majifix-common/commit/6a6ecb4a6611919f2ad79048d60fea420eacf367))
+
 #### 0.17.0 (2019-08-28)
 
 ##### Chores
