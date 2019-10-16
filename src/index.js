@@ -99,6 +99,11 @@ export const PREDEFINE_BUCKET_SERVICETYPE = 'servicetypes';
 export const PREDEFINE_BUCKET_SERVICE = 'services';
 export const PREDEFINE_BUCKET_BLOCKREASON = 'blockreasons';
 
+/* visibilities */
+export const VISIBILITY_PUBLIC = 'Public';
+export const VISIBILITY_PRIVATE = 'Private';
+export const VISIBILITIES = [VISIBILITY_PRIVATE, VISIBILITY_PUBLIC];
+
 /* utilities */
 
 /**

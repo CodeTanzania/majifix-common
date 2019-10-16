@@ -54,6 +54,10 @@ import {
   // populations
   POPULATION_MAX_DEPTH,
   POPULATION_DEFAULT,
+  // visibilities
+  VISIBILITY_PRIVATE,
+  VISIBILITY_PUBLIC,
+  VISIBILITIES,
   // utilities
   unlocalize,
   checkDependenciesFor,
@@ -126,6 +130,15 @@ describe('unit', () => {
     expect(POPULATION_DEFAULT).to.exist;
     expect(POPULATION_DEFAULT).to.be.an('object');
     expect(POPULATION_DEFAULT).to.be.eql({ maxDepth: 1 });
+  });
+
+  it('should expose visibilities', () => {
+    expect(VISIBILITY_PRIVATE).to.exist.and.be.equal('Private');
+    expect(VISIBILITY_PUBLIC).to.exist.and.be.equal('Public');
+    expect(VISIBILITIES).to.exist.and.be.eql([
+      VISIBILITY_PRIVATE,
+      VISIBILITY_PUBLIC,
+    ]);
   });
 
   it('should unlocalize localize schema path', () => {
