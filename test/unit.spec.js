@@ -62,6 +62,18 @@ import {
   COUNTER_YEAR_FORMAT,
   COUNTER_PREFIX,
   COUNTER_PAD_SIZE,
+  // contact methods
+  CONTACT_METHOD_PHONE_CALL,
+  CONTACT_METHOD_EMAIL,
+  CONTACT_METHOD_SMS,
+  CONTACT_METHOD_USSD,
+  CONTACT_METHOD_VISIT,
+  CONTACT_METHOD_LETTER,
+  CONTACT_METHOD_FAX,
+  CONTACT_METHOD_MOBILE_APP,
+  CONTACT_METHOD_WEBSITE,
+  CONTACT_METHODS,
+  CONTACT_METHODS_WEB,
   // utilities
   unlocalize,
   checkDependenciesFor,
@@ -149,6 +161,37 @@ describe('unit', () => {
     expect(COUNTER_PREFIX).to.exist.and.be.equal('');
     expect(COUNTER_PAD_SIZE).to.exist.and.be.equal(4);
     expect(COUNTER_YEAR_FORMAT).to.exist.and.be.equal('YY');
+  });
+
+  it('shoudl expose contact methods', () => {
+    expect(CONTACT_METHOD_PHONE_CALL).to.exist.and.be.equal('Call');
+    expect(CONTACT_METHOD_EMAIL).to.exist.and.be.equal('Email');
+    expect(CONTACT_METHOD_SMS).to.exist.and.be.equal('SMS');
+    expect(CONTACT_METHOD_USSD).to.exist.and.be.equal('USSD');
+    expect(CONTACT_METHOD_VISIT).to.exist.and.be.equal('Visit');
+    expect(CONTACT_METHOD_LETTER).to.exist.and.be.equal('Letter');
+    expect(CONTACT_METHOD_FAX).to.exist.and.be.equal('Fax');
+    expect(CONTACT_METHOD_MOBILE_APP).to.exist.and.be.equal('Mobile');
+    expect(CONTACT_METHOD_WEBSITE).to.exist.and.be.equal('Website');
+    expect(CONTACT_METHODS).to.exist.and.be.eql([
+      CONTACT_METHOD_PHONE_CALL,
+      CONTACT_METHOD_EMAIL,
+      CONTACT_METHOD_SMS,
+      CONTACT_METHOD_USSD,
+      CONTACT_METHOD_VISIT,
+      CONTACT_METHOD_LETTER,
+      CONTACT_METHOD_FAX,
+      CONTACT_METHOD_MOBILE_APP,
+      CONTACT_METHOD_WEBSITE,
+    ]);
+    expect(CONTACT_METHODS_WEB).to.exist.and.be.eql([
+      CONTACT_METHOD_PHONE_CALL,
+      CONTACT_METHOD_EMAIL,
+      CONTACT_METHOD_SMS,
+      CONTACT_METHOD_VISIT,
+      CONTACT_METHOD_LETTER,
+      CONTACT_METHOD_FAX,
+    ]);
   });
 
   it('should unlocalize localize schema path', () => {
