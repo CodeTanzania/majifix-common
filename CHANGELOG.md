@@ -1,3 +1,14 @@
+#### 0.19.0 (2019-10-26)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([b7af7dd5](https://github.com/CodeTanzania/majifix-common/commit/b7af7dd509890384edbf1bd743efbe443c00d77c))
+
+##### New Features
+
+*  add party relation names & types ([8737d4f6](https://github.com/CodeTanzania/majifix-common/commit/8737d4f6bacfc336742fd37102bbb69c41d09537))
+*  add workspaces ([e817a209](https://github.com/CodeTanzania/majifix-common/commit/e817a20956d703665f284ec2a03ad39371d3a8cc))
+
 #### 0.18.0 (2019-10-16)
 
 ##### Chores
