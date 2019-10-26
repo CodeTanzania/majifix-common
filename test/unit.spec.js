@@ -80,6 +80,19 @@ import {
   WORKSPACE_TECHNICAL,
   WORKSPACE_OTHER,
   WORKSPACES,
+  // party relation names
+  RELATION_NAME_INTERNAL,
+  RELATION_NAME_CUSTOMER,
+  RELATION_NAME_CIVILIAN,
+  RELATION_NAME_AGENCY,
+  RELATION_NAME_APP,
+  RELATION_NAMES,
+  // party relation types
+  RELATION_TYPE_WORKER,
+  RELATION_TYPE_INDIVIDUAL,
+  RELATION_TYPE_ORGANIZATION,
+  RELATION_TYPE_APP,
+  RELATION_TYPES,
   // utilities
   unlocalize,
   checkDependenciesFor,
@@ -169,7 +182,7 @@ describe('unit', () => {
     expect(COUNTER_YEAR_FORMAT).to.exist.and.be.equal('YY');
   });
 
-  it('shoudl expose contact methods', () => {
+  it('should expose contact methods', () => {
     expect(CONTACT_METHOD_PHONE_CALL).to.exist.and.be.equal('Call');
     expect(CONTACT_METHOD_EMAIL).to.exist.and.be.equal('Email');
     expect(CONTACT_METHOD_SMS).to.exist.and.be.equal('SMS');
@@ -200,7 +213,7 @@ describe('unit', () => {
     ]);
   });
 
-  it('shoudl expose workspaces', () => {
+  it('should expose workspaces', () => {
     expect(WORKSPACE_CALL_CENTER).to.exist.and.be.equal('Call Center');
     expect(WORKSPACE_CUSTOMER_CARE).to.exist.and.be.equal('Customer Care');
     expect(WORKSPACE_TECHNICAL).to.exist.and.be.equal('Technical');
@@ -210,6 +223,34 @@ describe('unit', () => {
       WORKSPACE_CUSTOMER_CARE,
       WORKSPACE_TECHNICAL,
       WORKSPACE_OTHER,
+    ]);
+  });
+
+  it('should expose relation names', () => {
+    expect(RELATION_NAME_INTERNAL).to.exist.and.be.equal('Internal');
+    expect(RELATION_NAME_CUSTOMER).to.exist.and.be.equal('Customer');
+    expect(RELATION_NAME_CIVILIAN).to.exist.and.be.equal('Civilian');
+    expect(RELATION_NAME_AGENCY).to.exist.and.be.equal('Agency');
+    expect(RELATION_NAME_APP).to.exist.and.be.equal('App');
+    expect(RELATION_NAMES).to.exist.and.be.eql([
+      RELATION_NAME_INTERNAL,
+      RELATION_NAME_CUSTOMER,
+      RELATION_NAME_CIVILIAN,
+      RELATION_NAME_AGENCY,
+      RELATION_NAME_APP,
+    ]);
+  });
+
+  it('should expose relation types', () => {
+    expect(RELATION_TYPE_WORKER).to.exist.and.be.equal('Worker');
+    expect(RELATION_TYPE_INDIVIDUAL).to.exist.and.be.equal('Individual');
+    expect(RELATION_TYPE_ORGANIZATION).to.exist.and.be.equal('Organization');
+    expect(RELATION_TYPE_APP).to.exist.and.be.equal('App');
+    expect(RELATION_TYPES).to.exist.and.be.eql([
+      RELATION_TYPE_WORKER,
+      RELATION_TYPE_INDIVIDUAL,
+      RELATION_TYPE_ORGANIZATION,
+      RELATION_TYPE_APP,
     ]);
   });
 

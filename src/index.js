@@ -155,6 +155,32 @@ export const WORKSPACES = [
   WORKSPACE_OTHER,
 ];
 
+/* party relation name */
+export const RELATION_NAME_INTERNAL = 'Internal';
+export const RELATION_NAME_CUSTOMER = 'Customer';
+export const RELATION_NAME_CIVILIAN = 'Civilian';
+export const RELATION_NAME_AGENCY = 'Agency';
+export const RELATION_NAME_APP = 'App';
+export const RELATION_NAMES = [
+  RELATION_NAME_INTERNAL,
+  RELATION_NAME_CUSTOMER,
+  RELATION_NAME_CIVILIAN,
+  RELATION_NAME_AGENCY,
+  RELATION_NAME_APP,
+];
+
+/* party relation types */
+export const RELATION_TYPE_WORKER = 'Worker';
+export const RELATION_TYPE_INDIVIDUAL = 'Individual';
+export const RELATION_TYPE_ORGANIZATION = 'Organization';
+export const RELATION_TYPE_APP = 'App';
+export const RELATION_TYPES = [
+  RELATION_TYPE_WORKER,
+  RELATION_TYPE_INDIVIDUAL,
+  RELATION_TYPE_ORGANIZATION,
+  RELATION_TYPE_APP,
+];
+
 //
 // utilities
 //
