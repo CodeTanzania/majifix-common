@@ -143,6 +143,18 @@ export const CONTACT_METHODS_WEB = [
   CONTACT_METHOD_FAX,
 ];
 
+/* workspaces */
+export const WORKSPACE_CALL_CENTER = 'Call Center';
+export const WORKSPACE_CUSTOMER_CARE = 'Customer Care';
+export const WORKSPACE_TECHNICAL = 'Technical';
+export const WORKSPACE_OTHER = 'Other';
+export const WORKSPACES = [
+  WORKSPACE_CALL_CENTER,
+  WORKSPACE_CUSTOMER_CARE,
+  WORKSPACE_TECHNICAL,
+  WORKSPACE_OTHER,
+];
+
 //
 // utilities
 //

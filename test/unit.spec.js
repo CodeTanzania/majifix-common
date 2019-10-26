@@ -74,6 +74,12 @@ import {
   CONTACT_METHOD_WEBSITE,
   CONTACT_METHODS,
   CONTACT_METHODS_WEB,
+  // workspaces
+  WORKSPACE_CALL_CENTER,
+  WORKSPACE_CUSTOMER_CARE,
+  WORKSPACE_TECHNICAL,
+  WORKSPACE_OTHER,
+  WORKSPACES,
   // utilities
   unlocalize,
   checkDependenciesFor,
@@ -191,6 +197,19 @@ describe('unit', () => {
       CONTACT_METHOD_VISIT,
       CONTACT_METHOD_LETTER,
       CONTACT_METHOD_FAX,
+    ]);
+  });
+
+  it('shoudl expose workspaces', () => {
+    expect(WORKSPACE_CALL_CENTER).to.exist.and.be.equal('Call Center');
+    expect(WORKSPACE_CUSTOMER_CARE).to.exist.and.be.equal('Customer Care');
+    expect(WORKSPACE_TECHNICAL).to.exist.and.be.equal('Technical');
+    expect(WORKSPACE_OTHER).to.exist.and.be.equal('Other');
+    expect(WORKSPACES).to.exist.and.be.eql([
+      WORKSPACE_CALL_CENTER,
+      WORKSPACE_CUSTOMER_CARE,
+      WORKSPACE_TECHNICAL,
+      WORKSPACE_OTHER,
     ]);
   });
 
