@@ -1,3 +1,11 @@
+#### 0.19.1 (2019-11-11)
+
+##### Chores
+
+* **deps:**
+  *  force latest version & audit fix ([a9953c67](https://github.com/CodeTanzania/majifix-common/commit/a9953c676f6d32cf68c07c18cf5266d8ff94aa55))
+  *  force latest version & audit fix ([08cf6a5f](https://github.com/CodeTanzania/majifix-common/commit/08cf6a5f911d824d320bddc6f3a003811235c89d))
+
 #### 0.19.0 (2019-10-26)
 
 ##### Chores
