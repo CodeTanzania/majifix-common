@@ -1,3 +1,9 @@
+#### 0.20.0 (2020-09-14)
+
+##### New Features
+
+*  add survey workspace ([f1976150](https://github.com/CodeTanzania/majifix-common/commit/f19761504727adb326f2da823addbe6ffdd6636a))
+
 #### 0.19.1 (2019-11-11)
 
 ##### Chores
