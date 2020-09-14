@@ -147,11 +147,13 @@ export const CONTACT_METHODS_WEB = [
 export const WORKSPACE_CALL_CENTER = 'Call Center';
 export const WORKSPACE_CUSTOMER_CARE = 'Customer Care';
 export const WORKSPACE_TECHNICAL = 'Technical';
+export const WORKSPACE_SURVEY = 'Survey';
 export const WORKSPACE_OTHER = 'Other';
 export const WORKSPACES = [
   WORKSPACE_CALL_CENTER,
   WORKSPACE_CUSTOMER_CARE,
   WORKSPACE_TECHNICAL,
+  WORKSPACE_SURVEY,
   WORKSPACE_OTHER,
 ];
 

@@ -78,6 +78,7 @@ import {
   WORKSPACE_CALL_CENTER,
   WORKSPACE_CUSTOMER_CARE,
   WORKSPACE_TECHNICAL,
+  WORKSPACE_SURVEY,
   WORKSPACE_OTHER,
   WORKSPACES,
   // party relation names
@@ -217,11 +218,13 @@ describe('unit', () => {
     expect(WORKSPACE_CALL_CENTER).to.exist.and.be.equal('Call Center');
     expect(WORKSPACE_CUSTOMER_CARE).to.exist.and.be.equal('Customer Care');
     expect(WORKSPACE_TECHNICAL).to.exist.and.be.equal('Technical');
+    expect(WORKSPACE_SURVEY).to.exist.and.be.equal('Survey');
     expect(WORKSPACE_OTHER).to.exist.and.be.equal('Other');
     expect(WORKSPACES).to.exist.and.be.eql([
       WORKSPACE_CALL_CENTER,
       WORKSPACE_CUSTOMER_CARE,
       WORKSPACE_TECHNICAL,
+      WORKSPACE_SURVEY,
       WORKSPACE_OTHER,
     ]);
   });
